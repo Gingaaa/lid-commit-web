@@ -28,7 +28,7 @@ import { GithubIcon } from "@/components/GithubIcon";
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-[#08090C] text-[#F3F4F6] relative overflow-x-hidden selection:bg-emerald-500/30 selection:text-emerald-300">
-      {/* Background Gradients & Glows */}
+      {/* Background Gradients & Glows all */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-emerald-500/15 via-teal-500/5 to-transparent blur-3xl pointer-events-none -z-10" />
       <div className="absolute top-[800px] -left-48 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
       <div className="absolute top-[1600px] -right-48 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
@@ -400,7 +400,7 @@ export default function Home() {
 
           <div className="rounded-2xl border border-white/10 bg-[#0C0E14] p-6 md:p-8 font-mono text-xs text-zinc-300 overflow-x-auto">
             <pre className="leading-relaxed">
-{`src/
+              {`src/
 ├── main.rs              — Daemon entry point, event loop & shutdown handlers
 ├── config.rs            — TOML config parser & fallback defaults
 ├── lid_monitor/mod.rs   — Native OS lid close listener
