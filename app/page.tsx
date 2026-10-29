@@ -38,7 +38,7 @@ export default function Home() {
 
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 space-y-28 md:space-y-36">
         {/* ========================================================= */}
-        {/* HERO SECTION */}
+        {/* HERO SECTION div */}
         {/* ========================================================= */}
         <section className="flex flex-col items-center text-center space-y-8 pt-4 md:pt-10">
           {/* Pill Badge */}
