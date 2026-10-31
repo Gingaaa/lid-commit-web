@@ -16,37 +16,34 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <span className="font-bold text-base tracking-tight text-white">LidCommit</span>
             <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">
-              v0.1.0
+              v0.2.0
             </span>
           </div>
         </Link>
 
         {/* Navigation links */}
-        <nav className="hidden md:flex items-center gap-6 text-xs font-medium text-zinc-400">
+        <nav className="hidden lg:flex items-center gap-6 text-xs font-medium text-zinc-400">
+          <a href="#download-hub" className="hover:text-white transition-colors text-emerald-400 font-bold flex items-center gap-1.5">
+            <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            Downloads
+          </a>
+          <a href="#desktop-dashboard" className="hover:text-white transition-colors">
+            Desktop App
+          </a>
           <a href="#how-it-works" className="hover:text-white transition-colors">
             How It Works
           </a>
-          <a href="#desktop-dashboard" className="hover:text-white transition-colors flex items-center gap-1.5 text-emerald-400 font-semibold">
-            <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            Desktop App
-          </a>
-          <a href="#demo" className="hover:text-white transition-colors">
-            Commit Playground
+          <a href="#providers" className="hover:text-white transition-colors">
+            AI Models
           </a>
           <a href="#windows-power" className="hover:text-white transition-colors text-amber-300">
             Windows Setup
           </a>
           <a href="#safety" className="hover:text-white transition-colors">
-            Safety Guards
+            Safety
           </a>
-          <a href="#installation" className="hover:text-white transition-colors">
-            Installation
-          </a>
-          <a href="#configuration" className="hover:text-white transition-colors">
-            Config TOML
-          </a>
-          <a href="#architecture" className="hover:text-white transition-colors">
-            Architecture
+          <a href="#contribute" className="hover:text-white transition-colors text-rose-300">
+            Contribute
           </a>
         </nav>
 
@@ -74,8 +71,8 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-2 text-zinc-400">
           <Laptop className="size-4 text-emerald-400" />
-          <span className="font-semibold text-white">LidCommit</span>
-          <span>— Open Source under MIT License</span>
+          <span className="font-semibold text-white">LidCommit v0.2.0</span>
+          <span>— Open Source under MIT License © Anshu Kumar</span>
         </div>
         <div className="flex items-center gap-6">
           <a

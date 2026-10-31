@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { Navbar, Footer } from "@/components/Navigation";
 import { InteractiveDemo } from "@/components/InteractiveDemo";
-import { InstallationGuide } from "@/components/InstallationGuide";
 import { ConfigSection } from "@/components/ConfigSection";
 import { DesktopDashboardShowcase } from "@/components/DesktopDashboardShowcase";
+import { DownloadHub } from "@/components/DownloadHub";
+import { AIProviderSelector } from "@/components/AIProviderSelector";
+import { ContributionSection } from "@/components/ContributionSection";
+import { ViewportReveal } from "@/components/ViewportReveal";
 import {
   Laptop,
   GitCommit,
@@ -19,38 +22,37 @@ import {
   BellRing,
   Cpu,
   Monitor,
-  ChevronRight,
-  Eye,
-  FileCode,
   FolderGit2,
   Play,
   Pause,
   AlertTriangle,
   Clock,
-  Settings2
+  Download,
+  Package,
+  Heart
 } from "lucide-react";
 import { GithubIcon } from "@/components/GithubIcon";
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-[#08090C] text-[#F3F4F6] relative overflow-x-hidden selection:bg-emerald-500/30 selection:text-emerald-300">
-      {/* Background Gradients & Glows all */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-emerald-500/15 via-teal-500/5 to-transparent blur-3xl pointer-events-none -z-10" />
+      {/* Background Gradients & Glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[550px] bg-gradient-to-b from-emerald-500/15 via-teal-500/5 to-transparent blur-3xl pointer-events-none -z-10 animate-float" />
       <div className="absolute top-[800px] -left-48 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute top-[1600px] -right-48 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-[1800px] -right-48 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
 
       {/* Navigation */}
       <Navbar />
 
-      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 space-y-28 md:space-y-36">
+      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 space-y-24 md:space-y-32">
         {/* ========================================================= */}
-        {/* HERO SECTION div */}
+        {/* 1. HERO SECTION */}
         {/* ========================================================= */}
         <section className="flex flex-col items-center text-center space-y-8 pt-4 md:pt-10">
-          {/* Pill Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/[0.04] border border-white/10 text-zinc-300 shadow-inner">
+          {/* Pill Badge with Pulse */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/[0.04] border border-white/10 text-zinc-300 shadow-inner hover:border-emerald-500/40 transition-colors cursor-default">
             <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Built with Rust &bull; Native Hardware Lid Interrupts &bull; Desktop Dashboard</span>
+            <span>v0.2.0 Released &bull; 1-Click Windows Setup &bull; Native Desktop GUI</span>
           </div>
 
           {/* Main Headline */}
@@ -63,22 +65,22 @@ export default function Home() {
 
           {/* Subtitle */}
           <p className="max-w-2xl text-base sm:text-lg text-zinc-400 leading-relaxed">
-            Never lose progress again. <strong className="text-zinc-200">LidCommit</strong> monitors active IDE projects from the system tray. When you close your laptop, it generates AI commit messages using your actual git diffs, commits your code, and pushes to GitHub.
+            Never lose progress again. <strong className="text-zinc-200">LidCommit</strong> sits in your system tray and monitors active IDE workspaces. When you close your laptop, it synthesizes AI commit messages, commits your diff, and pushes directly to GitHub.
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons with Hover Micro-Animations */}
           <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
             <a
-              href="#installation"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-sm transition-all shadow-lg shadow-emerald-500/25 hover:scale-[1.02]"
+              href="#download-hub"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-sm transition-all duration-200 shadow-xl shadow-emerald-500/25 hover:scale-[1.03] active:scale-[0.98]"
             >
-              <span>Install LidCommit</span>
-              <ArrowRight className="size-4" />
+              <Download className="size-4" />
+              <span>Download for Windows (Setup .exe)</span>
             </a>
 
             <a
               href="#desktop-dashboard"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-sm transition-all hover:border-white/20"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-sm transition-all duration-200 hover:border-white/25 hover:scale-[1.02]"
             >
               <Monitor className="size-4 text-emerald-400" />
               <span>Explore Desktop GUI</span>
@@ -88,37 +90,37 @@ export default function Home() {
               href="https://github.com/Gingaaa/lid-commit"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-sm transition-all hover:border-white/20"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-sm transition-all duration-200 hover:border-white/25 hover:scale-[1.02]"
             >
               <GithubIcon className="size-4" />
               <span>Star on GitHub</span>
             </a>
           </div>
 
-          {/* Hero Feature Highlights */}
+          {/* Hero Feature Highlights with Interactive Hover Cards */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-4xl pt-4 text-left">
-            <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.02]">
+            <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.02] hover-card-glow cursor-default">
               <div className="text-xs font-semibold text-white flex items-center gap-2 mb-1">
                 <Monitor className="size-3.5 text-emerald-400" />
                 <span>Desktop GUI</span>
               </div>
               <p className="text-[11px] text-zinc-400">Tray app with pause toggles &amp; activity history.</p>
             </div>
-            <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.02]">
+            <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.02] hover-card-glow cursor-default">
               <div className="text-xs font-semibold text-white flex items-center gap-2 mb-1">
                 <Pause className="size-3.5 text-amber-400" />
                 <span>Per-Project Pause</span>
               </div>
               <p className="text-[11px] text-zinc-400">Selectively skip repos from auto-committing.</p>
             </div>
-            <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.02]">
+            <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.02] hover-card-glow cursor-default">
               <div className="text-xs font-semibold text-white flex items-center gap-2 mb-1">
                 <Zap className="size-3.5 text-cyan-400" />
                 <span>Instant Sync Now</span>
               </div>
               <p className="text-[11px] text-zinc-400">Commit and push on-demand without closing lid.</p>
             </div>
-            <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.02]">
+            <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.02] hover-card-glow cursor-default">
               <div className="text-xs font-semibold text-white flex items-center gap-2 mb-1">
                 <Clock className="size-3.5 text-purple-400" />
                 <span>Zero-Config Fallback</span>
@@ -129,17 +131,24 @@ export default function Home() {
         </section>
 
         {/* ========================================================= */}
-        {/* NEW: DESKTOP DASHBOARD SHOWCASE */}
+        {/* 2. EASY DOWNLOAD HUB (PRIMARY 1-CLICK INSTALLATION) */}
         {/* ========================================================= */}
-        <section className="scroll-mt-24">
-          <DesktopDashboardShowcase />
-        </section>
+        <ViewportReveal>
+          <DownloadHub />
+        </ViewportReveal>
 
         {/* ========================================================= */}
-        {/* CRUCIAL WINDOWS POWER SETTING WALKTHROUGH */}
+        {/* 3. NATIVE DESKTOP DASHBOARD SHOWCASE */}
         {/* ========================================================= */}
-        <section id="windows-power" className="scroll-mt-24">
-          <div className="rounded-2xl border border-amber-500/25 bg-gradient-to-r from-amber-500/[0.07] via-amber-500/[0.03] to-transparent p-6 md:p-10 relative overflow-hidden">
+        <ViewportReveal>
+          <DesktopDashboardShowcase />
+        </ViewportReveal>
+
+        {/* ========================================================= */}
+        {/* 4. CRUCIAL WINDOWS POWER SETTING WALKTHROUGH */}
+        {/* ========================================================= */}
+        <ViewportReveal id="windows-power" className="scroll-mt-24">
+          <div className="rounded-2xl border border-amber-500/25 bg-gradient-to-r from-amber-500/[0.07] via-amber-500/[0.03] to-transparent p-6 md:p-10 relative overflow-hidden hover-card-glow">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
               <div className="space-y-4 max-w-2xl">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30">
@@ -168,7 +177,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="p-5 rounded-xl bg-black/60 border border-white/10 font-mono text-xs text-zinc-300 space-y-3 shrink-0 lg:max-w-md">
+              <div className="p-5 rounded-xl bg-black/60 border border-white/10 font-mono text-xs text-zinc-300 space-y-3 shrink-0 lg:max-w-md shadow-xl">
                 <div className="text-[11px] text-zinc-400 uppercase tracking-wide border-b border-white/5 pb-2 flex items-center justify-between">
                   <span>Power Setting Summary</span>
                   <span className="text-emerald-400 font-semibold">Ready for Sync</span>
@@ -192,19 +201,19 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </ViewportReveal>
 
         {/* ========================================================= */}
-        {/* INTERACTIVE DEMO PLAYGROUND */}
+        {/* 5. INTERACTIVE COMMIT PLAYGROUND */}
         {/* ========================================================= */}
-        <section id="demo" className="scroll-mt-24">
+        <ViewportReveal id="demo" className="scroll-mt-24">
           <InteractiveDemo />
-        </section>
+        </ViewportReveal>
 
         {/* ========================================================= */}
-        {/* HOW IT WORKS - 4 STEP ARCHITECTURE PIPELINE */}
+        {/* 6. HOW IT WORKS - 4 STEP ARCHITECTURE PIPELINE */}
         {/* ========================================================= */}
-        <section id="how-it-works" className="scroll-mt-24 space-y-12">
+        <ViewportReveal id="how-it-works" className="scroll-mt-24 space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
               <Zap className="size-3.5" />
@@ -220,9 +229,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Step 1 */}
-            <div className="rounded-2xl border border-white/10 bg-[#0E1017] p-6 flex flex-col justify-between hover:border-emerald-500/30 transition-all group">
+            <div className="rounded-2xl border border-white/10 bg-[#0E1017] p-6 flex flex-col justify-between hover-card-glow group">
               <div>
-                <div className="size-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold mb-5 group-hover:scale-110 transition-transform">
+                <div className="size-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold mb-5 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all">
                   <Laptop className="size-5" />
                 </div>
                 <span className="text-[11px] font-mono font-semibold text-emerald-400 uppercase tracking-wider">Step 01</span>
@@ -234,23 +243,23 @@ export default function Home() {
             </div>
 
             {/* Step 2 */}
-            <div className="rounded-2xl border border-white/10 bg-[#0E1017] p-6 flex flex-col justify-between hover:border-emerald-500/30 transition-all group">
+            <div className="rounded-2xl border border-white/10 bg-[#0E1017] p-6 flex flex-col justify-between hover-card-glow group">
               <div>
-                <div className="size-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold mb-5 group-hover:scale-110 transition-transform">
+                <div className="size-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold mb-5 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all">
                   <FolderGit2 className="size-5" />
                 </div>
                 <span className="text-[11px] font-mono font-semibold text-cyan-400 uppercase tracking-wider">Step 02</span>
                 <h3 className="text-base font-semibold text-white mt-1 mb-2">IDE &amp; Git Discovery</h3>
                 <p className="text-xs text-zinc-400 leading-relaxed">
-                  Scans open IDE processes (VS Code, JetBrains, active terminals) and identifies every dirty working tree with uncommitted modifications.
+                  Scans open IDE processes (VS Code, Cursor, JetBrains, active terminals) and identifies every dirty working tree with uncommitted modifications.
                 </p>
               </div>
             </div>
 
             {/* Step 3 */}
-            <div className="rounded-2xl border border-white/10 bg-[#0E1017] p-6 flex flex-col justify-between hover:border-emerald-500/30 transition-all group">
+            <div className="rounded-2xl border border-white/10 bg-[#0E1017] p-6 flex flex-col justify-between hover-card-glow group">
               <div>
-                <div className="size-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 font-bold mb-5 group-hover:scale-110 transition-transform">
+                <div className="size-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 font-bold mb-5 group-hover:scale-110 group-hover:bg-purple-500/20 transition-all">
                   <Sparkles className="size-5" />
                 </div>
                 <span className="text-[11px] font-mono font-semibold text-purple-400 uppercase tracking-wider">Step 03</span>
@@ -262,9 +271,9 @@ export default function Home() {
             </div>
 
             {/* Step 4 */}
-            <div className="rounded-2xl border border-white/10 bg-[#0E1017] p-6 flex flex-col justify-between hover:border-emerald-500/30 transition-all group">
+            <div className="rounded-2xl border border-white/10 bg-[#0E1017] p-6 flex flex-col justify-between hover-card-glow group">
               <div>
-                <div className="size-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 font-bold mb-5 group-hover:scale-110 transition-transform">
+                <div className="size-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 font-bold mb-5 group-hover:scale-110 group-hover:bg-amber-500/20 transition-all">
                   <GitPullRequest className="size-5" />
                 </div>
                 <span className="text-[11px] font-mono font-semibold text-amber-400 uppercase tracking-wider">Step 04</span>
@@ -275,12 +284,19 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </ViewportReveal>
 
         {/* ========================================================= */}
-        {/* SAFETY GUARDS - BUILT FOR DEVELOPER TRUST */}
+        {/* 7. DYNAMIC AI PROVIDERS & FALLBACK SELECTOR */}
         {/* ========================================================= */}
-        <section id="safety" className="scroll-mt-24 space-y-10">
+        <ViewportReveal id="providers" className="scroll-mt-24">
+          <AIProviderSelector />
+        </ViewportReveal>
+
+        {/* ========================================================= */}
+        {/* 8. SAFETY GUARDS - BUILT FOR DEVELOPER TRUST */}
+        {/* ========================================================= */}
+        <ViewportReveal id="safety" className="scroll-mt-24 space-y-10">
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-rose-500/10 text-rose-400 border border-rose-500/20">
               <ShieldAlert className="size-3.5" />
@@ -295,7 +311,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3">
+            <div className="p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
               <div className="flex items-center gap-3">
                 <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-emerald-400">
                   <CheckCircle2 className="size-4" />
@@ -307,7 +323,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3">
+            <div className="p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
               <div className="flex items-center gap-3">
                 <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-rose-400">
                   <ShieldAlert className="size-4" />
@@ -319,7 +335,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3">
+            <div className="p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
               <div className="flex items-center gap-3">
                 <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-amber-400">
                   <Lock className="size-4" />
@@ -331,7 +347,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3">
+            <div className="p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
               <div className="flex items-center gap-3">
                 <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400">
                   <GitPullRequest className="size-4" />
@@ -343,7 +359,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3">
+            <div className="p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
               <div className="flex items-center gap-3">
                 <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-purple-400">
                   <Layers className="size-4" />
@@ -355,7 +371,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3">
+            <div className="p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
               <div className="flex items-center gap-3">
                 <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-teal-400">
                   <BellRing className="size-4" />
@@ -367,97 +383,19 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </section>
+        </ViewportReveal>
 
         {/* ========================================================= */}
-        {/* AI PROVIDERS MATRIX */}
+        {/* 9. CONFIGURATION TOML REFERENCE */}
         {/* ========================================================= */}
-        <section className="space-y-10">
-          <div className="text-center max-w-2xl mx-auto space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-              <Cpu className="size-3.5" />
-              Model Flexibility
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
-              Choose your favorite AI model
-            </h2>
-            <p className="text-sm text-zinc-400">
-              Power your commit synthesis with cloud speed or 100% private local offline inference.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Gemini */}
-            <div className="p-6 rounded-2xl border border-emerald-500/30 bg-gradient-to-b from-emerald-500/[0.08] to-[#0E1017] space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                  Default Provider
-                </span>
-                <span className="text-[11px] font-mono text-zinc-400">Free Tier Ready</span>
-              </div>
-              <h3 className="text-xl font-bold text-white">Google Gemini</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                Blazing fast response times using <code className="text-zinc-200">gemini-2.0-flash</code> or <code className="text-zinc-200">gemini-1.5-pro</code>. Generates high-accuracy commit messages even on complex multi-file diffs.
-              </p>
-              <div className="pt-2 text-xs font-mono text-zinc-300 bg-black/40 p-3 rounded-lg border border-white/5">
-                Requires: <span className="text-emerald-400">GEMINI_API_KEY</span>
-              </div>
-            </div>
-
-            {/* OpenAI */}
-            <div className="p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-white/5 text-zinc-300 border border-white/10">
-                  Supported
-                </span>
-                <span className="text-[11px] font-mono text-zinc-400">Standard API</span>
-              </div>
-              <h3 className="text-xl font-bold text-white">OpenAI</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                Seamlessly connects to <code className="text-zinc-200">gpt-4o-mini</code> or <code className="text-zinc-200">gpt-4o</code> for developers who standardize their workflow around OpenAI API tokens.
-              </p>
-              <div className="pt-2 text-xs font-mono text-zinc-300 bg-black/40 p-3 rounded-lg border border-white/5">
-                Requires: <span className="text-cyan-400">OPENAI_API_KEY</span>
-              </div>
-            </div>
-
-            {/* Ollama */}
-            <div className="p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                  100% Offline
-                </span>
-                <span className="text-[11px] font-mono text-zinc-400">Local Privacy</span>
-              </div>
-              <h3 className="text-xl font-bold text-white">Ollama (Offline)</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                Zero external network requests. Run <code className="text-zinc-200">llama3.2</code> or <code className="text-zinc-200">codellama</code> entirely on your own CPU/GPU with total source code privacy.
-              </p>
-              <div className="pt-2 text-xs font-mono text-zinc-300 bg-black/40 p-3 rounded-lg border border-white/5">
-                Requires: <span className="text-purple-400">Local Ollama daemon</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ========================================================= */}
-        {/* INSTALLATION SECTION */}
-        {/* ========================================================= */}
-        <section className="scroll-mt-24">
-          <InstallationGuide />
-        </section>
-
-        {/* ========================================================= */}
-        {/* CONFIGURATION SECTION */}
-        {/* ========================================================= */}
-        <section className="scroll-mt-24">
+        <ViewportReveal id="configuration" className="scroll-mt-24">
           <ConfigSection />
-        </section>
+        </ViewportReveal>
 
         {/* ========================================================= */}
-        {/* ARCHITECTURE SECTION */}
+        {/* 10. ARCHITECTURE BREAKDOWN */}
         {/* ========================================================= */}
-        <section id="architecture" className="scroll-mt-24 space-y-8">
+        <ViewportReveal id="architecture" className="scroll-mt-24 space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
               <Layers className="size-3.5" />
@@ -471,7 +409,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-[#0C0E14] p-6 md:p-8 font-mono text-xs text-zinc-300 overflow-x-auto">
+          <div className="rounded-2xl border border-white/10 bg-[#0C0E14] p-6 md:p-8 font-mono text-xs text-zinc-300 overflow-x-auto hover-card-glow">
             <pre className="leading-relaxed">
 {`src/
 ├── main.rs              — Daemon entry point, event loop & manual sync handlers
@@ -488,39 +426,48 @@ export default function Home() {
 └── notifier.rs          — Cross-platform native OS notifications & wake-up dialogs`}
             </pre>
           </div>
-        </section>
+        </ViewportReveal>
 
         {/* ========================================================= */}
-        {/* FINAL CTA BANNER */}
+        {/* 11. OPEN SOURCE COMMUNITY & CONTRIBUTION */}
         {/* ========================================================= */}
-        <section className="rounded-3xl border border-emerald-500/30 bg-gradient-to-r from-emerald-500/10 via-teal-500/5 to-cyan-500/10 p-8 md:p-14 text-center space-y-6 relative overflow-hidden">
-          <div className="size-16 rounded-2xl bg-emerald-500/20 border border-emerald-500/30 mx-auto flex items-center justify-center">
-            <Laptop className="size-8 text-emerald-400" />
-          </div>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
-            Stop worrying about manual commits before you leave.
-          </h2>
-          <p className="max-w-xl mx-auto text-sm sm:text-base text-zinc-300 leading-relaxed">
-            Close your laptop, walk out the door, and pull down your work on your next device. Start using LidCommit today.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-            <a
-              href="#installation"
-              className="px-7 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm transition-all shadow-lg shadow-emerald-500/20"
-            >
-              Get Started Now
-            </a>
-            <a
-              href="https://github.com/Gingaaa/lid-commit"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-7 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-sm transition-all flex items-center gap-2"
-            >
-              <GithubIcon className="size-4" />
-              <span>View on GitHub</span>
-            </a>
-          </div>
-        </section>
+        <ViewportReveal id="contribute" className="scroll-mt-24">
+          <ContributionSection />
+        </ViewportReveal>
+
+        {/* ========================================================= */}
+        {/* 12. FINAL CALL TO ACTION */}
+        {/* ========================================================= */}
+        <ViewportReveal>
+          <section className="rounded-3xl border border-emerald-500/30 bg-gradient-to-r from-emerald-500/10 via-teal-500/5 to-cyan-500/10 p-8 md:p-14 text-center space-y-6 relative overflow-hidden hover-card-glow">
+            <div className="size-16 rounded-2xl bg-emerald-500/20 border border-emerald-500/30 mx-auto flex items-center justify-center">
+              <Laptop className="size-8 text-emerald-400" />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
+              Stop worrying about manual commits before you leave.
+            </h2>
+            <p className="max-w-xl mx-auto text-sm sm:text-base text-zinc-300 leading-relaxed">
+              Close your laptop, walk out the door, and pull down your work on your next device. Start using LidCommit today.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+              <a
+                href="#download-hub"
+                className="px-7 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-sm transition-all shadow-lg shadow-emerald-500/20 hover:scale-[1.03] active:scale-[0.98]"
+              >
+                Download LidCommit
+              </a>
+              <a
+                href="https://github.com/Gingaaa/lid-commit"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-7 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-sm transition-all flex items-center gap-2 hover:border-white/20 hover:scale-[1.02]"
+              >
+                <GithubIcon className="size-4" />
+                <span>View on GitHub</span>
+              </a>
+            </div>
+          </section>
+        </ViewportReveal>
       </main>
 
       {/* Footer */}
