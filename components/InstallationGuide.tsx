@@ -127,25 +127,67 @@ cargo build --release`}
           </div>
         </div>
 
-        {/* Step 3: API Key */}
+        {/* Step 3: Run Desktop App or Headless */}
         <div className="flex flex-col sm:flex-row gap-4">
           <div className="size-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center font-mono text-xs font-semibold text-emerald-400 shrink-0">
             03
           </div>
           <div className="flex-1 space-y-2">
-            <h4 className="text-sm font-semibold text-white">Set your Gemini API Key</h4>
+            <h4 className="text-sm font-semibold text-white">Run with Desktop Dashboard &amp; System Tray</h4>
+            <p className="text-xs text-zinc-400">
+              Launch the native desktop window. To run silently in headless background mode without the GUI, add <code className="text-zinc-200">--headless</code>.
+            </p>
             <div className="relative group rounded-xl bg-black/60 border border-white/10 p-3.5 font-mono text-xs text-zinc-300">
               <pre className="overflow-x-auto">
                 {platform === "windows"
-                  ? `[System.Environment]::SetEnvironmentVariable("GEMINI_API_KEY", "your_key_here", "User")`
-                  : `export GEMINI_API_KEY="your_key_here"`}
+                  ? `# Launch with Desktop GUI:\n.\\target\\release\\lid-commit.exe\n\n# Or headless in background:\n.\\target\\release\\lid-commit.exe --headless`
+                  : `./target/release/lid-commit\n\n# Or headless:\n./target/release/lid-commit --headless`}
               </pre>
               <button
                 onClick={() =>
                   copyToClipboard(
                     platform === "windows"
-                      ? `[System.Environment]::SetEnvironmentVariable("GEMINI_API_KEY", "your_key_here", "User")`
-                      : `export GEMINI_API_KEY="your_key_here"`,
+                      ? `.\\target\\release\\lid-commit.exe`
+                      : `./target/release/lid-commit`,
+                    "launch"
+                  )
+                }
+                className="absolute top-2.5 right-2.5 p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-all"
+                title="Copy code"
+              >
+                {copiedKey === "launch" ? <Check className="size-4 text-emerald-400" /> : <Copy className="size-4" />}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Step 4: API Key (Optional with fallback support) */}
+        <div className="flex flex-col sm:flex-row gap-4">
+          <div className="size-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center font-mono text-xs font-semibold text-emerald-400 shrink-0">
+            04
+          </div>
+          <div className="flex-1 space-y-2">
+            <div className="flex items-center gap-2">
+              <h4 className="text-sm font-semibold text-white">Configure AI Key (Optional)</h4>
+              <span className="text-[10px] font-semibold uppercase px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                Fallback Enabled
+              </span>
+            </div>
+            <p className="text-xs text-zinc-400">
+              If left unconfigured, LidCommit automatically falls back to clean timestamped commit messages like <code className="text-zinc-200">[LidCommit] auto-save at 2026-10-31 11:30</code>.
+            </p>
+            <div className="relative group rounded-xl bg-black/60 border border-white/10 p-3.5 font-mono text-xs text-zinc-300">
+              <pre className="overflow-x-auto">
+                {platform === "windows"
+                  ? `[System.Environment]::SetEnvironmentVariable("GEMINI_API_KEY", "your_gemini_key_here", "User")`
+                  : `export GEMINI_API_KEY="your_gemini_key_here"`}
+              </pre>
+              <button
+                onClick={() =>
+                  copyToClipboard(
+                    platform === "windows"
+                      ? `[System.Environment]::SetEnvironmentVariable("GEMINI_API_KEY", "your_gemini_key_here", "User")`
+                      : `export GEMINI_API_KEY="your_gemini_key_here"`,
                     "env"
                   )
                 }

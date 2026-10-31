@@ -22,12 +22,19 @@ export function Navbar() {
         </Link>
 
         {/* Navigation links */}
-        <nav className="hidden md:flex items-center gap-7 text-xs font-medium text-zinc-400">
+        <nav className="hidden md:flex items-center gap-6 text-xs font-medium text-zinc-400">
           <a href="#how-it-works" className="hover:text-white transition-colors">
             How It Works
           </a>
+          <a href="#desktop-dashboard" className="hover:text-white transition-colors flex items-center gap-1.5 text-emerald-400 font-semibold">
+            <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            Desktop App
+          </a>
           <a href="#demo" className="hover:text-white transition-colors">
-            Interactive Demo
+            Commit Playground
+          </a>
+          <a href="#windows-power" className="hover:text-white transition-colors text-amber-300">
+            Windows Setup
           </a>
           <a href="#safety" className="hover:text-white transition-colors">
             Safety Guards

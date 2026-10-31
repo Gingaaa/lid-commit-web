@@ -3,6 +3,7 @@ import { Navbar, Footer } from "@/components/Navigation";
 import { InteractiveDemo } from "@/components/InteractiveDemo";
 import { InstallationGuide } from "@/components/InstallationGuide";
 import { ConfigSection } from "@/components/ConfigSection";
+import { DesktopDashboardShowcase } from "@/components/DesktopDashboardShowcase";
 import {
   Laptop,
   GitCommit,
@@ -21,7 +22,12 @@ import {
   ChevronRight,
   Eye,
   FileCode,
-  FolderGit2
+  FolderGit2,
+  Play,
+  Pause,
+  AlertTriangle,
+  Clock,
+  Settings2
 } from "lucide-react";
 import { GithubIcon } from "@/components/GithubIcon";
 
@@ -44,7 +50,7 @@ export default function Home() {
           {/* Pill Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/[0.04] border border-white/10 text-zinc-300 shadow-inner">
             <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Built with Rust &bull; Native Hardware Lid Interrupts</span>
+            <span>Built with Rust &bull; Native Hardware Lid Interrupts &bull; Desktop Dashboard</span>
           </div>
 
           {/* Main Headline */}
@@ -57,7 +63,7 @@ export default function Home() {
 
           {/* Subtitle */}
           <p className="max-w-2xl text-base sm:text-lg text-zinc-400 leading-relaxed">
-            Never lose progress again. <strong className="text-zinc-200">LidCommit</strong> runs silently as a native daemon. When you close your laptop, it detects open IDE projects, generates AI commit messages using your actual git diffs, and safely pushes to GitHub.
+            Never lose progress again. <strong className="text-zinc-200">LidCommit</strong> monitors active IDE projects from the system tray. When you close your laptop, it generates AI commit messages using your actual git diffs, commits your code, and pushes to GitHub.
           </p>
 
           {/* CTA Buttons */}
@@ -71,6 +77,14 @@ export default function Home() {
             </a>
 
             <a
+              href="#desktop-dashboard"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-sm transition-all hover:border-white/20"
+            >
+              <Monitor className="size-4 text-emerald-400" />
+              <span>Explore Desktop GUI</span>
+            </a>
+
+            <a
               href="https://github.com/Gingaaa/lid-commit"
               target="_blank"
               rel="noopener noreferrer"
@@ -81,41 +95,100 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Hero Laptop Animation / Command Banner */}
-          <div className="w-full max-w-4xl pt-6">
-            <div className="rounded-2xl border border-white/10 bg-[#0C0E14] shadow-2xl p-4 sm:p-6 text-left font-mono text-xs text-zinc-300 relative overflow-hidden">
-              <div className="flex items-center justify-between pb-4 border-b border-white/5">
-                <div className="flex items-center gap-2">
-                  <span className="size-3 rounded-full bg-rose-500/80 inline-block" />
-                  <span className="size-3 rounded-full bg-amber-500/80 inline-block" />
-                  <span className="size-3 rounded-full bg-emerald-500/80 inline-block" />
-                  <span className="ml-2 text-zinc-500 text-[11px]">daemon &bull; lidcommit-service</span>
+          {/* Hero Feature Highlights */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-4xl pt-4 text-left">
+            <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.02]">
+              <div className="text-xs font-semibold text-white flex items-center gap-2 mb-1">
+                <Monitor className="size-3.5 text-emerald-400" />
+                <span>Desktop GUI</span>
+              </div>
+              <p className="text-[11px] text-zinc-400">Tray app with pause toggles &amp; activity history.</p>
+            </div>
+            <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.02]">
+              <div className="text-xs font-semibold text-white flex items-center gap-2 mb-1">
+                <Pause className="size-3.5 text-amber-400" />
+                <span>Per-Project Pause</span>
+              </div>
+              <p className="text-[11px] text-zinc-400">Selectively skip repos from auto-committing.</p>
+            </div>
+            <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.02]">
+              <div className="text-xs font-semibold text-white flex items-center gap-2 mb-1">
+                <Zap className="size-3.5 text-cyan-400" />
+                <span>Instant Sync Now</span>
+              </div>
+              <p className="text-[11px] text-zinc-400">Commit and push on-demand without closing lid.</p>
+            </div>
+            <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.02]">
+              <div className="text-xs font-semibold text-white flex items-center gap-2 mb-1">
+                <Clock className="size-3.5 text-purple-400" />
+                <span>Zero-Config Fallback</span>
+              </div>
+              <p className="text-[11px] text-zinc-400">Clean auto-save timestamps if offline or no key.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* ========================================================= */}
+        {/* NEW: DESKTOP DASHBOARD SHOWCASE */}
+        {/* ========================================================= */}
+        <section className="scroll-mt-24">
+          <DesktopDashboardShowcase />
+        </section>
+
+        {/* ========================================================= */}
+        {/* CRUCIAL WINDOWS POWER SETTING WALKTHROUGH */}
+        {/* ========================================================= */}
+        <section id="windows-power" className="scroll-mt-24">
+          <div className="rounded-2xl border border-amber-500/25 bg-gradient-to-r from-amber-500/[0.07] via-amber-500/[0.03] to-transparent p-6 md:p-10 relative overflow-hidden">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+              <div className="space-y-4 max-w-2xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                  <AlertTriangle className="size-3.5" />
+                  Crucial Windows 10/11 Setup
                 </div>
-                <span className="text-[11px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-                  Lid Event Triggered
-                </span>
+                <h3 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight">
+                  Configure &quot;When I close the lid&quot; to &quot;Do nothing&quot;
+                </h3>
+                <p className="text-xs md:text-sm text-zinc-300 leading-relaxed">
+                  To allow LidCommit to inspect your repositories, stage changes, query Gemini/Ollama, and push to GitHub while the lid is shut, Windows must not abruptly sever the network card and sleep the CPU mid-push.
+                </p>
+                <div className="space-y-2.5 pt-2 text-xs text-zinc-300 font-mono">
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-amber-400 font-bold">1.</span>
+                    <span>Press <kbd className="bg-white/10 px-1.5 py-0.5 rounded text-white font-sans">Win + R</kbd>, type <code className="text-amber-300">control</code>, and press Enter.</span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-amber-400 font-bold">2.</span>
+                    <span>Open <strong className="text-white">Power Options</strong> &gt; Click <strong className="text-white">&quot;Choose what closing the lid does&quot;</strong> in the left sidebar.</span>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-amber-400 font-bold">3.</span>
+                    <span>Set both <strong className="text-white">On battery</strong> and <strong className="text-white">Plugged in</strong> to <span className="text-emerald-400 font-bold">&quot;Do nothing&quot;</span> and click Save changes.</span>
+                  </div>
+                </div>
               </div>
 
-              <div className="pt-4 space-y-2.5 leading-relaxed text-zinc-400">
-                <p className="text-zinc-500"># Native OS lid close interrupt captured (0% idle CPU polling)</p>
-                <p className="text-cyan-400">
-                  [17:34:02] <span className="text-zinc-300">INFO</span> Lid closed detected via <span className="text-zinc-100">WM_POWERBROADCAST</span>
-                </p>
-                <p className="text-cyan-400">
-                  [17:34:02] <span className="text-zinc-300">INFO</span> Scanning active processes: <span className="text-emerald-400">Code.exe (VS Code)</span>, <span className="text-emerald-400">rust-analyzer</span>
-                </p>
-                <p className="text-cyan-400">
-                  [17:34:03] <span className="text-zinc-300">INFO</span> Found uncommitted changes in: <span className="text-zinc-200">F:/Open Source/lid-commit</span> (2 files changed)
-                </p>
-                <p className="text-amber-400">
-                  [17:34:03] <span className="text-zinc-300">INFO</span> Calling Gemini 2.0 Flash to synthesize diff...
-                </p>
-                <p className="text-emerald-400 bg-emerald-500/[0.08] p-2 rounded border border-emerald-500/20 font-semibold">
-                  &gt; git commit -m &quot;🔒 lid-close: optimize process scan and prevent loop notifications&quot;
-                </p>
-                <p className="text-cyan-400">
-                  [17:34:04] <span className="text-zinc-300">INFO</span> Pushed successfully to <span className="text-white font-bold">origin/main</span>. Desktop notification delivered.
-                </p>
+              <div className="p-5 rounded-xl bg-black/60 border border-white/10 font-mono text-xs text-zinc-300 space-y-3 shrink-0 lg:max-w-md">
+                <div className="text-[11px] text-zinc-400 uppercase tracking-wide border-b border-white/5 pb-2 flex items-center justify-between">
+                  <span>Power Setting Summary</span>
+                  <span className="text-emerald-400 font-semibold">Ready for Sync</span>
+                </div>
+                <div className="flex justify-between items-center py-1">
+                  <span className="text-zinc-400">Lid Close Action:</span>
+                  <span className="text-emerald-400 font-bold">Do Nothing</span>
+                </div>
+                <div className="flex justify-between items-center py-1">
+                  <span className="text-zinc-400">Display:</span>
+                  <span className="text-zinc-200">Turns Off Safely</span>
+                </div>
+                <div className="flex justify-between items-center py-1">
+                  <span className="text-zinc-400">Wi-Fi &amp; Git Sync:</span>
+                  <span className="text-emerald-400">Uninterrupted</span>
+                </div>
+                <div className="flex justify-between items-center py-1">
+                  <span className="text-zinc-400">LidCommit Event:</span>
+                  <span className="text-cyan-400 font-bold">WM_POWERBROADCAST</span>
+                </div>
               </div>
             </div>
           </div>
@@ -400,17 +473,19 @@ export default function Home() {
 
           <div className="rounded-2xl border border-white/10 bg-[#0C0E14] p-6 md:p-8 font-mono text-xs text-zinc-300 overflow-x-auto">
             <pre className="leading-relaxed">
-              {`src/
-├── main.rs              — Daemon entry point, event loop & shutdown handlers
-├── config.rs            — TOML config parser & fallback defaults
+{`src/
+├── main.rs              — Daemon entry point, event loop & manual sync handlers
+├── gui.rs               — Native desktop window, system tray, and IPC controller
+├── dashboard.html       — Modern dark-mode dashboard UI & frontend logic
+├── config.rs            — TOML config parser, serializer & fallback defaults
 ├── lid_monitor/mod.rs   — Native OS lid close listener
-│     ├── Windows:        WM_POWERBROADCAST + GUID_LIDCLOSE_ACTION register
+│     ├── Windows:        WM_POWERBROADCAST + GUID_LIDSWITCH_STATE_CHANGE
 │     ├── macOS:          IOKit kIOMessageSystemWillSleep hook
 │     └── Linux:          logind D-Bus PrepareForSleep signal
-├── ide_scanner/mod.rs   — Detects active VS Code, JetBrains & terminal git directories
+├── ide_scanner/mod.rs   — Detects active VS Code, JetBrains, Cursor & terminal git roots
 ├── git/mod.rs           — git status, diff parser, stage, commit & push engine
-├── ai/mod.rs            — Multi-provider interface (Gemini / OpenAI / Ollama)
-└── notifier.rs          — Cross-platform native OS toast notifications`}
+├── ai/mod.rs            — Multi-provider interface (Gemini / OpenAI / Ollama + Fallback)
+└── notifier.rs          — Cross-platform native OS notifications & wake-up dialogs`}
             </pre>
           </div>
         </section>
