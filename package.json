@@ -1,6 +1,11 @@
 {
   "name": "lid-commit-web",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "homepage": "https://lid-commit-web.netlify.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gingaaa/lid-commit"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",

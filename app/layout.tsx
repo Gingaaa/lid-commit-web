@@ -16,14 +16,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://lid-commit-web.netlify.app"),
   title: "LidCommit — Auto-commit when you close your laptop lid",
   description: "Never lose progress again. LidCommit detects native lid close events, scans active IDE repos, drafts semantic AI commit messages with Gemini or Ollama, and safely pushes to GitHub.",
-  keywords: ["git", "auto-commit", "rust", "developer tools", "gemini", "ollama", "github", "ide"],
-  authors: [{ name: "Gingaaa" }],
+  keywords: ["git", "auto-commit", "rust", "developer tools", "gemini", "ollama", "github", "ide", "laptop-lid"],
+  authors: [{ name: "Anshu Kumar", url: "https://github.com/Gingaaa" }],
   openGraph: {
     title: "LidCommit — Auto-commit when you close your laptop lid",
     description: "Zero lost progress. Native OS lid detection, IDE-aware diff scanning, Gemini AI commit messages, and automated Git sync.",
+    url: "https://lid-commit-web.netlify.app",
+    siteName: "LidCommit",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LidCommit — Auto-commit when you close your laptop lid",
+    description: "Zero lost progress. Native OS lid detection, IDE-aware diff scanning, Gemini AI commit messages, and automated Git sync.",
   },
 };
 
