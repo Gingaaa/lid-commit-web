@@ -91,22 +91,22 @@ export function InteractiveDemo() {
   };
 
   return (
-    <div className="relative rounded-2xl border border-white/10 bg-[#0E1017]/90 p-4 sm:p-6 md:p-8 backdrop-blur-xl shadow-2xl overflow-hidden">
+    <div className="relative rounded-2xl border border-white/10 bg-[#0E1017]/90 p-3.5 sm:p-6 md:p-8 backdrop-blur-xl shadow-2xl overflow-hidden min-w-0 w-full">
       {/* Background glow element */}
       <div className="absolute -top-32 -right-32 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header with status badge */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 sm:pb-6 border-b border-white/5">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 sm:pb-6 border-b border-white/5">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-2">
+          <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-2">
             <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
             Live Simulated Pipeline
           </div>
-          <h3 className="text-lg sm:text-xl font-semibold text-white tracking-tight">
+          <h3 className="text-base sm:text-xl font-bold text-white tracking-tight">
             See how LidCommit crafts commit messages
           </h3>
-          <p className="text-xs sm:text-sm text-zinc-400">
+          <p className="text-xs sm:text-sm text-zinc-400 mt-0.5">
             Select a project scenario below to observe how the local diff is transformed into a clean commit.
           </p>
         </div>
@@ -130,15 +130,15 @@ export function InteractiveDemo() {
       </div>
 
       {/* Grid: Left is Diff, Right is Commit Result */}
-      <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch min-w-0 w-full">
+      <div className="mt-6 grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6 items-stretch min-w-0 w-full">
         {/* Left: Input Diff */}
-        <div className="lg:col-span-7 min-w-0 w-full flex flex-col rounded-xl border border-white/5 bg-[#090A0F] overflow-hidden">
-          <div className="flex flex-wrap items-center justify-between px-3.5 sm:px-4 py-2.5 sm:py-3 bg-white/[0.02] border-b border-white/5 text-xs text-zinc-400 gap-2">
-            <div className="flex items-center gap-2 min-w-0">
+        <div className="md:col-span-7 min-w-0 w-full flex flex-col rounded-xl border border-white/5 bg-[#090A0F] overflow-hidden">
+          <div className="flex flex-wrap items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 bg-white/[0.02] border-b border-white/5 text-xs text-zinc-400 gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
               <GitBranch className="size-3.5 text-emerald-400 shrink-0" />
-              <span className="font-mono text-zinc-300 truncate">{current.repo}</span>
+              <span className="font-mono text-zinc-300 truncate max-w-[110px] sm:max-w-none">{current.repo}</span>
               <span className="text-zinc-600">/</span>
-              <span className="font-mono text-emerald-400/90 truncate">{current.branch}</span>
+              <span className="font-mono text-emerald-400/90 truncate max-w-[120px] sm:max-w-none">{current.branch}</span>
             </div>
             <div className="flex items-center gap-2 font-mono text-[11px] shrink-0">
               <span className="text-emerald-400 font-semibold">+{current.insertions}</span>
@@ -146,17 +146,17 @@ export function InteractiveDemo() {
             </div>
           </div>
 
-          <div className="p-3.5 sm:p-4 font-mono text-xs overflow-x-auto leading-relaxed text-zinc-300">
+          <div className="p-3 sm:p-4 font-mono text-[11px] sm:text-xs overflow-x-auto leading-relaxed text-zinc-300 min-w-0 w-full">
             <pre className="whitespace-pre">
               {current.diffSnippet.split("\n").map((line, idx) => {
                 let color = "text-zinc-400";
                 let bg = "";
                 if (line.startsWith("+")) {
                   color = "text-emerald-400";
-                  bg = "bg-emerald-500/10 -mx-4 px-4 block";
+                  bg = "bg-emerald-500/10 -mx-3 sm:-mx-4 px-3 sm:px-4 block";
                 } else if (line.startsWith("-")) {
                   color = "text-rose-400";
-                  bg = "bg-rose-500/10 -mx-4 px-4 block";
+                  bg = "bg-rose-500/10 -mx-3 sm:-mx-4 px-3 sm:px-4 block";
                 } else if (line.startsWith("diff")) {
                   color = "text-zinc-500 font-bold";
                 }
@@ -171,8 +171,8 @@ export function InteractiveDemo() {
         </div>
 
         {/* Right: Automated Output & Toast */}
-        <div className="lg:col-span-5 min-w-0 w-full flex flex-col justify-between gap-4">
-          <div className="rounded-xl border border-emerald-500/20 bg-gradient-to-b from-emerald-500/[0.07] to-transparent p-5 flex flex-col justify-between h-full">
+        <div className="md:col-span-5 min-w-0 w-full flex flex-col justify-between gap-4">
+          <div className="rounded-xl border border-emerald-500/20 bg-gradient-to-b from-emerald-500/[0.07] to-transparent p-4 sm:p-5 flex flex-col justify-between h-full">
             <div>
               <div className="flex items-center justify-between text-xs mb-3">
                 <span className="font-medium text-emerald-400 inline-flex items-center gap-1.5">
@@ -185,14 +185,14 @@ export function InteractiveDemo() {
               </div>
 
               {/* The Commit Message Box */}
-              <div className="p-3.5 rounded-lg bg-black/60 border border-white/10 font-mono text-xs text-white leading-snug">
+              <div className="p-3 sm:p-3.5 rounded-lg bg-black/60 border border-white/10 font-mono text-xs text-white leading-snug break-words">
                 {current.aiMessage}
               </div>
 
               <div className="mt-4 space-y-2 text-xs text-zinc-400">
                 <div className="flex items-center gap-2 text-zinc-300">
                   <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0" />
-                  <span>Safety checked: Remote origin present & &lt;50 files</span>
+                  <span className="break-words">Safety checked: Remote origin present & &lt;50 files</span>
                 </div>
                 <div className="flex items-center gap-2 text-zinc-300">
                   <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0" />
@@ -200,14 +200,14 @@ export function InteractiveDemo() {
                 </div>
                 <div className="flex items-center gap-2 text-zinc-300">
                   <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0" />
-                  <span>Pushed upstream to <code className="text-zinc-200">origin/{current.branch}</code></span>
+                  <span className="truncate">Pushed upstream to <code className="text-zinc-200">origin/{current.branch}</code></span>
                 </div>
               </div>
             </div>
 
             {/* Simulated Desktop Toast Notification */}
-            <div className="mt-5 p-3 rounded-lg border border-white/10 bg-[#141722] shadow-lg flex items-start gap-3 animate-in fade-in slide-in-from-bottom-2 duration-300">
-              <div className="size-8 rounded-lg overflow-hidden border border-emerald-500/30 flex items-center justify-center shrink-0">
+            <div className="mt-4 sm:mt-5 p-2.5 sm:p-3 rounded-lg border border-white/10 bg-[#141722] shadow-lg flex items-start gap-2.5 sm:gap-3 animate-in fade-in slide-in-from-bottom-2 duration-300">
+              <div className="size-7 sm:size-8 rounded-lg overflow-hidden border border-emerald-500/30 flex items-center justify-center shrink-0">
                 <Image
                   src="/lidcommit-icon.png"
                   alt="LidCommit Icon"

@@ -30,17 +30,17 @@ export function AIProviderSelector() {
   };
 
   return (
-    <div className="relative rounded-3xl border border-white/10 bg-[#0B0D14]/90 p-4 sm:p-8 md:p-10 backdrop-blur-2xl overflow-hidden shadow-2xl space-y-6 sm:space-y-8">
+    <div className="relative rounded-2xl sm:rounded-3xl border border-white/10 bg-[#0B0D14]/90 p-3.5 sm:p-8 md:p-10 backdrop-blur-2xl overflow-hidden shadow-2xl space-y-5 sm:space-y-8 min-w-0 w-full">
       {/* Dynamic Glow */}
       <div className="absolute top-0 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header */}
-      <div className="text-center max-w-2xl mx-auto space-y-3">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-300 border border-purple-500/20">
+      <div className="text-center max-w-2xl mx-auto space-y-2.5 sm:space-y-3">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-purple-500/10 text-purple-300 border border-purple-500/20">
           <Sparkles className="size-3.5" />
           <span>Dynamic In-App Switcher &bull; Real-Time Hot Reload</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white">
+        <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white">
           Choose How Your Commits Are Generated
         </h2>
         <p className="text-xs sm:text-sm text-zinc-400">
@@ -49,29 +49,29 @@ export function AIProviderSelector() {
       </div>
 
       {/* 4 Provider Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
         {/* Gemini */}
         <button
           onClick={() => setProvider("gemini")}
-          className={`p-5 rounded-2xl border text-left flex flex-col justify-between transition-all duration-200 group relative ${
+          className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl border text-left flex flex-col justify-between transition-all duration-200 group relative ${
             provider === "gemini"
-              ? "border-emerald-400/80 bg-emerald-500/[0.08] shadow-lg shadow-emerald-500/15 scale-[1.02]"
+              ? "border-emerald-400/80 bg-emerald-500/[0.08] shadow-lg shadow-emerald-500/15 scale-[1.01]"
               : "border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]"
           }`}
         >
           {provider === "gemini" && (
-            <div className="absolute top-3 right-3 size-2 rounded-full bg-emerald-400 animate-pulse" />
+            <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 size-2 rounded-full bg-emerald-400 animate-pulse" />
           )}
-          <div className="space-y-2">
-            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+          <div className="space-y-1.5 sm:space-y-2">
+            <span className="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-1.5 sm:px-2 py-0.5 rounded border border-emerald-500/20 inline-block">
               Default &bull; Free Tier
             </span>
-            <h3 className="text-lg font-bold text-white mt-1">Google Gemini</h3>
-            <p className="text-xs text-zinc-400 leading-relaxed">
+            <h3 className="text-sm sm:text-lg font-bold text-white mt-1">Google Gemini</h3>
+            <p className="text-[11px] sm:text-xs text-zinc-400 leading-relaxed line-clamp-2 sm:line-clamp-none">
               Ultra-fast diff summarization using <code className="text-zinc-200 font-mono">gemini-2.0-flash</code>.
             </p>
           </div>
-          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-zinc-400">
+          <div className="mt-3 sm:mt-4 pt-2 sm:pt-3 border-t border-white/5 flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-zinc-400">
             <span>Free API Key</span>
             <span className="text-emerald-400 font-semibold">{provider === "gemini" ? "Active" : "Select"}</span>
           </div>
@@ -80,25 +80,25 @@ export function AIProviderSelector() {
         {/* Ollama */}
         <button
           onClick={() => setProvider("ollama")}
-          className={`p-5 rounded-2xl border text-left flex flex-col justify-between transition-all duration-200 group relative ${
+          className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl border text-left flex flex-col justify-between transition-all duration-200 group relative ${
             provider === "ollama"
-              ? "border-purple-400/80 bg-purple-500/[0.08] shadow-lg shadow-purple-500/15 scale-[1.02]"
+              ? "border-purple-400/80 bg-purple-500/[0.08] shadow-lg shadow-purple-500/15 scale-[1.01]"
               : "border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]"
           }`}
         >
           {provider === "ollama" && (
-            <div className="absolute top-3 right-3 size-2 rounded-full bg-purple-400 animate-pulse" />
+            <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 size-2 rounded-full bg-purple-400 animate-pulse" />
           )}
-          <div className="space-y-2">
-            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/20">
+          <div className="space-y-1.5 sm:space-y-2">
+            <span className="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-1.5 sm:px-2 py-0.5 rounded border border-purple-500/20 inline-block">
               100% Offline &bull; Air-Gapped
             </span>
-            <h3 className="text-lg font-bold text-white mt-1">Ollama (Local)</h3>
-            <p className="text-xs text-zinc-400 leading-relaxed">
+            <h3 className="text-sm sm:text-lg font-bold text-white mt-1">Ollama (Local)</h3>
+            <p className="text-[11px] sm:text-xs text-zinc-400 leading-relaxed line-clamp-2 sm:line-clamp-none">
               Total privacy. Runs on local GPU with <code className="text-zinc-200 font-mono">llama3.2</code> or <code className="text-zinc-200 font-mono">codellama</code>.
             </p>
           </div>
-          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-zinc-400">
+          <div className="mt-3 sm:mt-4 pt-2 sm:pt-3 border-t border-white/5 flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-zinc-400">
             <span>No Cloud Diffs</span>
             <span className="text-purple-400 font-semibold">{provider === "ollama" ? "Active" : "Select"}</span>
           </div>
@@ -107,25 +107,25 @@ export function AIProviderSelector() {
         {/* OpenAI */}
         <button
           onClick={() => setProvider("openai")}
-          className={`p-5 rounded-2xl border text-left flex flex-col justify-between transition-all duration-200 group relative ${
+          className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl border text-left flex flex-col justify-between transition-all duration-200 group relative ${
             provider === "openai"
-              ? "border-cyan-400/80 bg-cyan-500/[0.08] shadow-lg shadow-cyan-500/15 scale-[1.02]"
+              ? "border-cyan-400/80 bg-cyan-500/[0.08] shadow-lg shadow-cyan-500/15 scale-[1.01]"
               : "border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]"
           }`}
         >
           {provider === "openai" && (
-            <div className="absolute top-3 right-3 size-2 rounded-full bg-cyan-400 animate-pulse" />
+            <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 size-2 rounded-full bg-cyan-400 animate-pulse" />
           )}
-          <div className="space-y-2">
-            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">
+          <div className="space-y-1.5 sm:space-y-2">
+            <span className="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-1.5 sm:px-2 py-0.5 rounded border border-cyan-500/20 inline-block">
               GPT Models
             </span>
-            <h3 className="text-lg font-bold text-white mt-1">OpenAI API</h3>
-            <p className="text-xs text-zinc-400 leading-relaxed">
+            <h3 className="text-sm sm:text-lg font-bold text-white mt-1">OpenAI API</h3>
+            <p className="text-[11px] sm:text-xs text-zinc-400 leading-relaxed line-clamp-2 sm:line-clamp-none">
               Leverage <code className="text-zinc-200 font-mono">gpt-4o-mini</code> or <code className="text-zinc-200 font-mono">gpt-4o</code> with your existing OpenAI credits.
             </p>
           </div>
-          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-zinc-400">
+          <div className="mt-3 sm:mt-4 pt-2 sm:pt-3 border-t border-white/5 flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-zinc-400">
             <span>Standard Tokens</span>
             <span className="text-cyan-400 font-semibold">{provider === "openai" ? "Active" : "Select"}</span>
           </div>
@@ -134,25 +134,25 @@ export function AIProviderSelector() {
         {/* Clean Fallback */}
         <button
           onClick={() => setProvider("fallback")}
-          className={`p-5 rounded-2xl border text-left flex flex-col justify-between transition-all duration-200 group relative ${
+          className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl border text-left flex flex-col justify-between transition-all duration-200 group relative ${
             provider === "fallback"
-              ? "border-amber-400/80 bg-amber-500/[0.08] shadow-lg shadow-amber-500/15 scale-[1.02]"
+              ? "border-amber-400/80 bg-amber-500/[0.08] shadow-lg shadow-amber-500/15 scale-[1.01]"
               : "border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]"
           }`}
         >
           {provider === "fallback" && (
-            <div className="absolute top-3 right-3 size-2 rounded-full bg-amber-400 animate-pulse" />
+            <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 size-2 rounded-full bg-amber-400 animate-pulse" />
           )}
-          <div className="space-y-2">
-            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
+          <div className="space-y-1.5 sm:space-y-2">
+            <span className="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-1.5 sm:px-2 py-0.5 rounded border border-amber-500/20 inline-block">
               Zero Config
             </span>
-            <h3 className="text-lg font-bold text-white mt-1">Clean Auto-Save</h3>
-            <p className="text-xs text-zinc-400 leading-relaxed">
+            <h3 className="text-sm sm:text-lg font-bold text-white mt-1">Clean Auto-Save</h3>
+            <p className="text-[11px] sm:text-xs text-zinc-400 leading-relaxed line-clamp-2 sm:line-clamp-none">
               No API keys needed. Generates clean timestamped commits like <code className="text-zinc-200 font-mono">[LidCommit] auto-save</code>.
             </p>
           </div>
-          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-zinc-400">
+          <div className="mt-3 sm:mt-4 pt-2 sm:pt-3 border-t border-white/5 flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-zinc-400">
             <span>Always Ready</span>
             <span className="text-amber-400 font-semibold">{provider === "fallback" ? "Active" : "Select"}</span>
           </div>

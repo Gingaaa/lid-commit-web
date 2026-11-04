@@ -47,7 +47,7 @@ export default function Home() {
       {/* Navigation */}
       <Navbar />
 
-      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-20 space-y-16 sm:space-y-24 md:space-y-32">
+      <main className="flex-1 max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-6 sm:py-10 md:py-16 space-y-12 sm:space-y-16 md:space-y-24 min-w-0 w-full">
         {/* ========================================================= */}
         {/* 1. HERO SECTION */}
         {/* ========================================================= */}
@@ -166,53 +166,53 @@ export default function Home() {
         {/* 4. CRUCIAL WINDOWS POWER SETTING WALKTHROUGH */}
         {/* ========================================================= */}
         <ViewportReveal id="windows-power" className="scroll-mt-24">
-          <div className="rounded-2xl border border-amber-500/25 bg-gradient-to-r from-amber-500/[0.07] via-amber-500/[0.03] to-transparent p-4 sm:p-6 md:p-10 relative overflow-hidden hover-card-glow">
-            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8">
-              <div className="space-y-3 sm:space-y-4 max-w-2xl">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                  <AlertTriangle className="size-3.5" />
-                  Crucial Windows 10/11 Setup
+          <div className="rounded-2xl border border-amber-500/25 bg-gradient-to-r from-amber-500/[0.07] via-amber-500/[0.03] to-transparent p-3.5 sm:p-6 md:p-8 relative overflow-hidden hover-card-glow min-w-0 w-full">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-8">
+              <div className="space-y-2.5 sm:space-y-4 max-w-2xl min-w-0">
+                <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                  <AlertTriangle className="size-3.5 shrink-0" />
+                  <span>Crucial Windows Setup</span>
                 </div>
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight">
+                <h3 className="text-lg sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight">
                   Configure &quot;When I close the lid&quot; to &quot;Do nothing&quot;
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
                   To allow LidCommit to inspect your repositories, stage changes, query Gemini/Ollama, and push to GitHub while the lid is shut, Windows must not abruptly sever the network card and sleep the CPU mid-push.
                 </p>
-                <div className="space-y-2.5 pt-2 text-xs text-zinc-300 font-mono">
+                <div className="space-y-2 pt-1 sm:pt-2 text-[11px] sm:text-xs text-zinc-300 font-mono">
                   <div className="flex items-start gap-2.5">
-                    <span className="text-amber-400 font-bold">1.</span>
+                    <span className="text-amber-400 font-bold shrink-0">1.</span>
                     <span>Press <kbd className="bg-white/10 px-1.5 py-0.5 rounded text-white font-sans">Win + R</kbd>, type <code className="text-amber-300">control</code>, and press Enter.</span>
                   </div>
                   <div className="flex items-start gap-2.5">
-                    <span className="text-amber-400 font-bold">2.</span>
+                    <span className="text-amber-400 font-bold shrink-0">2.</span>
                     <span>Open <strong className="text-white">Power Options</strong> &gt; Click <strong className="text-white">&quot;Choose what closing the lid does&quot;</strong> in the left sidebar.</span>
                   </div>
                   <div className="flex items-start gap-2.5">
-                    <span className="text-amber-400 font-bold">3.</span>
+                    <span className="text-amber-400 font-bold shrink-0">3.</span>
                     <span>Set both <strong className="text-white">On battery</strong> and <strong className="text-white">Plugged in</strong> to <span className="text-emerald-400 font-bold">&quot;Do nothing&quot;</span> and click Save changes.</span>
                   </div>
                 </div>
               </div>
 
-              <div className="p-4 sm:p-5 rounded-xl bg-black/60 border border-white/10 font-mono text-xs text-zinc-300 space-y-3 w-full lg:max-w-md shrink-0 shadow-xl">
-                <div className="text-[11px] text-zinc-400 uppercase tracking-wide border-b border-white/5 pb-2 flex items-center justify-between">
+              <div className="p-3.5 sm:p-5 rounded-xl bg-black/60 border border-white/10 font-mono text-[11px] sm:text-xs text-zinc-300 space-y-2.5 sm:space-y-3 w-full md:max-w-xs lg:max-w-sm shrink-0 shadow-xl min-w-0">
+                <div className="text-[10px] sm:text-[11px] text-zinc-400 uppercase tracking-wide border-b border-white/5 pb-2 flex items-center justify-between">
                   <span>Power Setting Summary</span>
                   <span className="text-emerald-400 font-semibold">Ready for Sync</span>
                 </div>
-                <div className="flex justify-between items-center py-1">
+                <div className="flex justify-between items-center py-0.5 sm:py-1">
                   <span className="text-zinc-400">Lid Close Action:</span>
                   <span className="text-emerald-400 font-bold">Do Nothing</span>
                 </div>
-                <div className="flex justify-between items-center py-1">
+                <div className="flex justify-between items-center py-0.5 sm:py-1">
                   <span className="text-zinc-400">Display:</span>
                   <span className="text-zinc-200">Turns Off Safely</span>
                 </div>
-                <div className="flex justify-between items-center py-1">
+                <div className="flex justify-between items-center py-0.5 sm:py-1">
                   <span className="text-zinc-400">Wi-Fi &amp; Git Sync:</span>
                   <span className="text-emerald-400">Uninterrupted</span>
                 </div>
-                <div className="flex justify-between items-center py-1">
+                <div className="flex justify-between items-center py-0.5 sm:py-1">
                   <span className="text-zinc-400">LidCommit Event:</span>
                   <span className="text-cyan-400 font-bold">WM_POWERBROADCAST</span>
                 </div>

@@ -48,14 +48,14 @@ sound = false
   };
 
   return (
-    <div id="configuration" className="relative rounded-2xl border border-white/10 bg-[#0E1017]/80 p-4 sm:p-6 md:p-10 backdrop-blur-xl">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6 pb-6 border-b border-white/5">
+    <div id="configuration" className="relative rounded-2xl border border-white/10 bg-[#0E1017]/80 p-3.5 sm:p-6 md:p-10 backdrop-blur-xl min-w-0 w-full overflow-hidden">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-6 pb-5 sm:pb-6 border-b border-white/5">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-3">
+          <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-2 sm:mb-3">
             <Sliders className="size-3.5" />
             Declarative TOML Configuration
           </div>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-white">
+          <h2 className="text-lg sm:text-2xl md:text-3xl font-bold tracking-tight text-white">
             Configurable down to every detail
           </h2>
           <p className="text-zinc-400 text-xs sm:text-sm mt-1 max-w-xl">
@@ -81,14 +81,14 @@ sound = false
         </button>
       </div>
 
-      <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start min-w-0 w-full">
+      <div className="mt-6 sm:mt-8 grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-start min-w-0 w-full">
         {/* Left Column: Code Preview */}
-        <div className="lg:col-span-7 min-w-0 w-full rounded-xl bg-black/70 border border-white/10 p-3.5 sm:p-4 font-mono text-[11px] sm:text-xs overflow-x-auto text-zinc-300 leading-relaxed">
+        <div className="md:col-span-7 min-w-0 w-full rounded-xl bg-black/70 border border-white/10 p-3 sm:p-4 font-mono text-[11px] sm:text-xs overflow-x-auto text-zinc-300 leading-relaxed">
           <pre>{sampleConfig}</pre>
         </div>
 
         {/* Right Column: Key Guarantees */}
-        <div className="lg:col-span-5 min-w-0 w-full space-y-4">
+        <div className="md:col-span-5 min-w-0 w-full space-y-3 sm:space-y-4">
           <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02]">
             <div className="flex items-center gap-2.5 text-sm font-semibold text-white mb-1.5">
               <Cpu className="size-4 text-emerald-400" />

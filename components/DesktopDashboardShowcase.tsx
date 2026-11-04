@@ -123,43 +123,43 @@ export function DesktopDashboardShowcase() {
   };
 
   return (
-    <div id="desktop-dashboard" className="space-y-6">
-      <div className="text-center max-w-3xl mx-auto space-y-3">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+    <div id="desktop-dashboard" className="space-y-4 sm:space-y-6">
+      <div className="text-center max-w-3xl mx-auto space-y-2 sm:space-y-3">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
           <Monitor className="size-3.5" />
           <span>New in Latest Release: Native Desktop App</span>
         </div>
-        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+        <h2 className="text-xl sm:text-3xl md:text-5xl font-extrabold tracking-tight text-white">
           Visual Control. Zero Friction.
         </h2>
-        <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
+        <p className="text-xs sm:text-sm md:text-base text-zinc-400 leading-relaxed">
           LidCommit now launches with a sleek native dark-mode GUI &amp; System Tray application. Inspect open IDE workspaces, selectively pause auto-commits per repository, trigger on-demand syncs, and review live activity logs.
         </p>
       </div>
 
       {/* Interactive Mock Dashboard Window */}
-      <div className="relative rounded-2xl border border-white/10 bg-[#0B0D13] shadow-2xl overflow-hidden backdrop-blur-xl">
+      <div className="relative rounded-xl sm:rounded-2xl border border-white/10 bg-[#0B0D13] shadow-2xl overflow-hidden backdrop-blur-xl">
         {/* Window Titlebar */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between px-3.5 sm:px-4 py-2.5 sm:py-3 bg-[#0F121B] border-b border-white/5 select-none gap-2">
-          <div className="flex items-center gap-2.5 min-w-0">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between px-3 sm:px-4 py-2 sm:py-3 bg-[#0F121B] border-b border-white/5 select-none gap-2">
+          <div className="flex items-center gap-2 min-w-0">
             <div className="flex items-center gap-1.5 shrink-0">
-              <div className="size-2.5 sm:size-3 rounded-full bg-rose-500/80" />
-              <div className="size-2.5 sm:size-3 rounded-full bg-amber-500/80" />
-              <div className="size-2.5 sm:size-3 rounded-full bg-emerald-500/80" />
+              <div className="size-2.5 rounded-full bg-rose-500/80" />
+              <div className="size-2.5 rounded-full bg-amber-500/80" />
+              <div className="size-2.5 rounded-full bg-emerald-500/80" />
             </div>
-            <div className="h-4 w-[1px] bg-white/10 mx-1 shrink-0" />
-            <div className="flex items-center gap-2 text-xs font-semibold text-zinc-300 min-w-0">
-              <div className="size-4 rounded overflow-hidden border border-emerald-500/30 shrink-0">
+            <div className="h-3.5 w-[1px] bg-white/10 mx-1 shrink-0" />
+            <div className="flex items-center gap-1.5 text-xs font-semibold text-zinc-300 min-w-0">
+              <div className="size-3.5 rounded overflow-hidden border border-emerald-500/30 shrink-0">
                 <Image
                   src="/lidcommit-icon.png"
                   alt="LidCommit Icon"
-                  width={16}
-                  height={16}
+                  width={14}
+                  height={14}
                   className="size-full object-cover"
                 />
               </div>
-              <span className="truncate">LidCommit Desktop Dashboard</span>
-              <span className="text-[10px] font-mono text-zinc-500 bg-white/5 px-1.5 sm:px-2 py-0.5 rounded shrink-0 hidden sm:inline">
+              <span className="truncate text-[11px] sm:text-xs">LidCommit Desktop Dashboard</span>
+              <span className="text-[9px] sm:text-[10px] font-mono text-zinc-500 bg-white/5 px-1.5 py-0.5 rounded shrink-0 hidden sm:inline">
                 v0.2.0-gui
               </span>
             </div>
@@ -190,21 +190,21 @@ export function DesktopDashboardShowcase() {
         </div>
 
         {/* Inner App Navigation Tabs */}
-        <div className="flex items-center gap-2 sm:gap-4 px-3 sm:px-6 pt-3 sm:pt-4 border-b border-white/5 text-xs font-medium text-zinc-400 overflow-x-auto scrollbar-none whitespace-nowrap">
+        <div className="flex items-center gap-1 sm:gap-4 px-2 sm:px-6 pt-2.5 sm:pt-4 border-b border-white/5 text-[11px] sm:text-xs font-medium text-zinc-400 overflow-x-auto scrollbar-none whitespace-nowrap">
           <button
             onClick={() => setActiveTab("projects")}
-            className={`pb-3 flex items-center gap-2 border-b-2 transition-all shrink-0 ${
+            className={`pb-2.5 sm:pb-3 px-2 sm:px-0 flex items-center gap-1.5 sm:gap-2 border-b-2 transition-all shrink-0 ${
               activeTab === "projects"
                 ? "border-emerald-400 text-white font-semibold"
                 : "border-transparent hover:text-zinc-200"
             }`}
           >
             <FolderGit2 className="size-3.5 text-emerald-400" />
-            <span>Active Repositories ({repos.length})</span>
+            <span>Active Repos ({repos.length})</span>
           </button>
           <button
             onClick={() => setActiveTab("history")}
-            className={`pb-3 flex items-center gap-2 border-b-2 transition-all shrink-0 ${
+            className={`pb-2.5 sm:pb-3 px-2 sm:px-0 flex items-center gap-1.5 sm:gap-2 border-b-2 transition-all shrink-0 ${
               activeTab === "history"
                 ? "border-emerald-400 text-white font-semibold"
                 : "border-transparent hover:text-zinc-200"
@@ -215,14 +215,14 @@ export function DesktopDashboardShowcase() {
           </button>
           <button
             onClick={() => setActiveTab("settings")}
-            className={`pb-3 flex items-center gap-2 border-b-2 transition-all shrink-0 ${
+            className={`pb-2.5 sm:pb-3 px-2 sm:px-0 flex items-center gap-1.5 sm:gap-2 border-b-2 transition-all shrink-0 ${
               activeTab === "settings"
                 ? "border-emerald-400 text-white font-semibold"
                 : "border-transparent hover:text-zinc-200"
             }`}
           >
             <Settings className="size-3.5 text-purple-400" />
-            <span>Preferences &amp; Fallbacks</span>
+            <span>Preferences</span>
           </button>
         </div>
 

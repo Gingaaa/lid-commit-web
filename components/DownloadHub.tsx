@@ -22,116 +22,116 @@ export function DownloadHub() {
   const [os, setOs] = useState<"windows" | "macos" | "linux" | "source">("windows");
 
   return (
-    <div id="download-hub" className="relative rounded-3xl border border-white/10 bg-[#0E1017]/90 p-4 sm:p-8 md:p-12 backdrop-blur-2xl overflow-hidden shadow-2xl">
+    <div id="download-hub" className="relative rounded-2xl sm:rounded-3xl border border-white/10 bg-[#0E1017]/90 p-3.5 sm:p-6 md:p-10 backdrop-blur-2xl overflow-hidden shadow-2xl">
       {/* Dynamic Ambient Background Glows */}
       <div className="absolute -top-32 -right-32 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header */}
-      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 sm:pb-8 border-b border-white/5">
-        <div className="space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 sm:gap-6 pb-5 sm:pb-8 border-b border-white/5">
+        <div className="space-y-2.5 sm:space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
             <Package className="size-3.5" />
             <span>Zero-Compiling Required &bull; v0.2.0 Released</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white">
             Download LidCommit
           </h2>
-          <p className="text-xs sm:text-sm md:text-base text-zinc-400 max-w-xl">
+          <p className="text-xs sm:text-sm text-zinc-400 max-w-xl">
             Installs just like any standard modern desktop app. No Rust toolchain, terminal commands, or manual compiling needed for end users.
           </p>
         </div>
 
-        {/* Operating System Picker Tabs */}
-        <div className="flex flex-wrap items-center gap-1.5 p-1 sm:p-1.5 bg-black/60 rounded-2xl border border-white/10 w-full lg:w-auto">
+        {/* Operating System Picker Tabs (2x2 grid on mobile, row on tablet/desktop) */}
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-1.5 p-1 sm:p-1.5 bg-black/60 rounded-xl sm:rounded-2xl border border-white/10 w-full md:w-auto">
           <button
             onClick={() => setOs("windows")}
-            className={`flex-1 sm:flex-none justify-center flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 text-xs font-bold rounded-xl transition-all duration-200 ${
+            className={`flex items-center justify-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-2 sm:py-2.5 text-xs font-bold rounded-lg sm:rounded-xl transition-all duration-200 text-center ${
               os === "windows"
                 ? "bg-emerald-500 text-black shadow-lg shadow-emerald-500/20 scale-[1.02]"
                 : "text-zinc-400 hover:text-white hover:bg-white/5"
             }`}
           >
-            <Monitor className="size-4" />
-            <span>Windows (Setup .exe)</span>
+            <Monitor className="size-3.5 sm:size-4 shrink-0" />
+            <span className="truncate">Windows</span>
           </button>
           <button
             onClick={() => setOs("macos")}
-            className={`flex-1 sm:flex-none justify-center flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 text-xs font-bold rounded-xl transition-all duration-200 ${
+            className={`flex items-center justify-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-2 sm:py-2.5 text-xs font-bold rounded-lg sm:rounded-xl transition-all duration-200 text-center ${
               os === "macos"
                 ? "bg-emerald-500 text-black shadow-lg shadow-emerald-500/20 scale-[1.02]"
                 : "text-zinc-400 hover:text-white hover:bg-white/5"
             }`}
           >
-            <Apple className="size-4" />
-            <span>macOS (Silicon / Intel)</span>
+            <Apple className="size-3.5 sm:size-4 shrink-0" />
+            <span className="truncate">macOS</span>
           </button>
           <button
             onClick={() => setOs("linux")}
-            className={`flex-1 sm:flex-none justify-center flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 text-xs font-bold rounded-xl transition-all duration-200 ${
+            className={`flex items-center justify-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-2 sm:py-2.5 text-xs font-bold rounded-lg sm:rounded-xl transition-all duration-200 text-center ${
               os === "linux"
                 ? "bg-emerald-500 text-black shadow-lg shadow-emerald-500/20 scale-[1.02]"
                 : "text-zinc-400 hover:text-white hover:bg-white/5"
             }`}
           >
-            <Cpu className="size-4" />
-            <span>Linux (Binary)</span>
+            <Cpu className="size-3.5 sm:size-4 shrink-0" />
+            <span className="truncate">Linux</span>
           </button>
           <button
             onClick={() => setOs("source")}
-            className={`flex-1 sm:flex-none justify-center flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 text-xs font-bold rounded-xl transition-all duration-200 ${
+            className={`flex items-center justify-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-2 sm:py-2.5 text-xs font-bold rounded-lg sm:rounded-xl transition-all duration-200 text-center ${
               os === "source"
                 ? "bg-emerald-500 text-black shadow-lg shadow-emerald-500/20 scale-[1.02]"
                 : "text-zinc-400 hover:text-white hover:bg-white/5"
             }`}
           >
-            <Terminal className="size-4" />
-            <span>Source Code</span>
+            <Terminal className="size-3.5 sm:size-4 shrink-0" />
+            <span className="truncate">Source</span>
           </button>
         </div>
       </div>
 
       {/* OS Tab Content with Animated Transitions */}
-      <div className="mt-6 sm:mt-8 transition-all duration-300">
+      <div className="mt-5 sm:mt-8 transition-all duration-300">
         {/* WINDOWS TAB */}
         {os === "windows" && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center min-w-0 w-full animate-in fade-in duration-300">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8 items-start min-w-0 w-full animate-in fade-in duration-300">
             {/* Download Card */}
-            <div className="lg:col-span-7 min-w-0 w-full space-y-5 sm:space-y-6">
-              <div className="p-4 sm:p-6 md:p-8 rounded-2xl bg-gradient-to-br from-emerald-500/[0.08] via-emerald-500/[0.02] to-transparent border border-emerald-500/30 space-y-4 sm:space-y-5">
+            <div className="md:col-span-7 min-w-0 w-full space-y-4 sm:space-y-6">
+              <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-gradient-to-br from-emerald-500/[0.08] via-emerald-500/[0.02] to-transparent border border-emerald-500/30 space-y-4">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                    <Sparkles className="size-3.5" />
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                    <Sparkles className="size-3 sm:size-3.5" />
                     Recommended Windows Install
                   </div>
-                  <span className="text-xs font-mono text-zinc-400">Windows 10 / 11 (64-bit)</span>
+                  <span className="text-[11px] sm:text-xs font-mono text-zinc-400">Windows 10 / 11 (64-bit)</span>
                 </div>
 
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                  <h3 className="text-lg sm:text-2xl font-bold text-white tracking-tight">
                     LidCommit 1-Click Setup Wizard
                   </h3>
-                  <p className="text-xs sm:text-sm text-zinc-300 mt-1.5 leading-relaxed">
-                    Double-click and run. Installs cleanly to <code className="text-emerald-300 bg-black/40 px-1.5 py-0.5 rounded text-xs break-all">%LocalAppData%\Programs\LidCommit</code> with automatic Start Menu and Desktop shortcuts.
+                  <p className="text-xs sm:text-sm text-zinc-300 mt-1 leading-relaxed">
+                    Double-click and run. Installs cleanly to <code className="text-emerald-300 bg-black/40 px-1.5 py-0.5 rounded text-[11px] break-all">%LocalAppData%\Programs\LidCommit</code> with automatic shortcuts.
                   </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4 pt-1">
                   <a
                     href="https://github.com/Gingaaa/lid-commit/releases/latest"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2.5 px-5 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-sm transition-all shadow-xl shadow-emerald-500/25 hover:scale-[1.02] active:scale-[0.98] text-center"
+                    className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs sm:text-sm transition-all shadow-xl shadow-emerald-500/25 hover:scale-[1.02] active:scale-[0.98] text-center"
                   >
-                    <Download className="size-5 shrink-0" />
-                    <span>Download LidCommit-Setup-x86_64.exe</span>
+                    <Download className="size-4 sm:size-5 shrink-0" />
+                    <span>Download Setup .exe</span>
                   </a>
 
                   <a
                     href="https://github.com/Gingaaa/lid-commit/releases/latest"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-3 sm:py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-xs transition-all text-center"
+                    className="inline-flex items-center justify-center gap-1.5 px-4 sm:px-5 py-2.5 sm:py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-xs transition-all text-center"
                   >
                     <span>Portable .zip archive</span>
                     <ExternalLink className="size-3 text-zinc-400" />
@@ -140,35 +140,35 @@ export function DownloadHub() {
               </div>
 
               {/* Setup Highlights */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
-                <div className="p-4 rounded-xl bg-black/40 border border-white/5 text-xs space-y-1">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3.5">
+                <div className="p-3 sm:p-4 rounded-xl bg-black/40 border border-white/5 text-xs space-y-1">
                   <div className="font-semibold text-white flex items-center gap-1.5">
-                    <CheckCircle2 className="size-3.5 text-emerald-400" />
+                    <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0" />
                     <span>Start Menu &amp; Tray</span>
                   </div>
                   <p className="text-zinc-400 text-[11px]">Docks straight into your system tray on launch.</p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-black/40 border border-white/5 text-xs space-y-1">
+                <div className="p-3 sm:p-4 rounded-xl bg-black/40 border border-white/5 text-xs space-y-1">
                   <div className="font-semibold text-white flex items-center gap-1.5">
-                    <CheckCircle2 className="size-3.5 text-emerald-400" />
+                    <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0" />
                     <span>Auto-Launch Option</span>
                   </div>
-                  <p className="text-zinc-400 text-[11px]">Optional startup protection enabled in 1 checkbox.</p>
+                  <p className="text-zinc-400 text-[11px]">Optional startup protection in 1 checkbox.</p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-black/40 border border-white/5 text-xs space-y-1">
+                <div className="p-3 sm:p-4 rounded-xl bg-black/40 border border-white/5 text-xs space-y-1">
                   <div className="font-semibold text-white flex items-center gap-1.5">
-                    <CheckCircle2 className="size-3.5 text-emerald-400" />
+                    <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0" />
                     <span>Clean Uninstaller</span>
                   </div>
-                  <p className="text-zinc-400 text-[11px]">Standard removal via Windows Settings / Apps.</p>
+                  <p className="text-zinc-400 text-[11px]">Standard removal via Windows Settings.</p>
                 </div>
               </div>
             </div>
 
             {/* Inno Setup Visual Graphic Mock */}
-            <div className="lg:col-span-5 min-w-0 w-full rounded-2xl border border-white/10 bg-[#07090E] p-4 sm:p-6 shadow-2xl relative">
+            <div className="md:col-span-5 min-w-0 w-full rounded-xl sm:rounded-2xl border border-white/10 bg-[#07090E] p-4 sm:p-5 shadow-2xl relative">
               <div className="flex items-center justify-between pb-4 border-b border-white/5 text-xs">
                 <span className="font-mono text-zinc-400 flex items-center gap-1.5">
                   <Monitor className="size-3.5 text-emerald-400" />
@@ -195,7 +195,7 @@ export function DownloadHub() {
                 <div className="space-y-2 text-[11px] text-zinc-400 bg-black/50 p-3.5 rounded-lg border border-white/5">
                   <div className="flex items-center gap-2 text-zinc-200">
                     <CheckCircle2 className="size-3 text-emerald-400 shrink-0" />
-                    <span>Destination: %LocalAppData%\Programs\LidCommit</span>
+                    <span className="break-all">Destination: %LocalAppData%\Programs\LidCommit</span>
                   </div>
                   <div className="flex items-center gap-2 text-zinc-200">
                     <CheckCircle2 className="size-3 text-emerald-400 shrink-0" />
