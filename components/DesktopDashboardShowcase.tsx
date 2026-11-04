@@ -140,15 +140,15 @@ export function DesktopDashboardShowcase() {
       {/* Interactive Mock Dashboard Window */}
       <div className="relative rounded-2xl border border-white/10 bg-[#0B0D13] shadow-2xl overflow-hidden backdrop-blur-xl">
         {/* Window Titlebar */}
-        <div className="flex items-center justify-between px-4 py-3 bg-[#0F121B] border-b border-white/5 select-none">
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1.5">
-              <div className="size-3 rounded-full bg-rose-500/80" />
-              <div className="size-3 rounded-full bg-amber-500/80" />
-              <div className="size-3 rounded-full bg-emerald-500/80" />
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between px-3.5 sm:px-4 py-2.5 sm:py-3 bg-[#0F121B] border-b border-white/5 select-none gap-2">
+          <div className="flex items-center gap-2.5 min-w-0">
+            <div className="flex items-center gap-1.5 shrink-0">
+              <div className="size-2.5 sm:size-3 rounded-full bg-rose-500/80" />
+              <div className="size-2.5 sm:size-3 rounded-full bg-amber-500/80" />
+              <div className="size-2.5 sm:size-3 rounded-full bg-emerald-500/80" />
             </div>
-            <div className="h-4 w-[1px] bg-white/10 mx-1" />
-            <div className="flex items-center gap-2 text-xs font-semibold text-zinc-300">
+            <div className="h-4 w-[1px] bg-white/10 mx-1 shrink-0" />
+            <div className="flex items-center gap-2 text-xs font-semibold text-zinc-300 min-w-0">
               <div className="size-4 rounded overflow-hidden border border-emerald-500/30 shrink-0">
                 <Image
                   src="/lidcommit-icon.png"
@@ -158,16 +158,18 @@ export function DesktopDashboardShowcase() {
                   className="size-full object-cover"
                 />
               </div>
-              <span>LidCommit Desktop Dashboard</span>
-              <span className="text-[10px] font-mono text-zinc-500 bg-white/5 px-2 py-0.5 rounded">v0.2.0-gui</span>
+              <span className="truncate">LidCommit Desktop Dashboard</span>
+              <span className="text-[10px] font-mono text-zinc-500 bg-white/5 px-1.5 sm:px-2 py-0.5 rounded shrink-0 hidden sm:inline">
+                v0.2.0-gui
+              </span>
             </div>
           </div>
 
           {/* Quick Header Controls */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 self-start sm:self-auto shrink-0 w-full sm:w-auto">
             <button
               onClick={() => setDaemonPaused(!daemonPaused)}
-              className={`px-3 py-1 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-all ${
+              className={`flex-1 sm:flex-none justify-center px-2.5 sm:px-3 py-1 rounded-lg text-xs font-medium flex items-center gap-1.5 transition-all ${
                 daemonPaused
                   ? "bg-amber-500/20 text-amber-300 border border-amber-500/30"
                   : "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
@@ -179,19 +181,19 @@ export function DesktopDashboardShowcase() {
             <button
               onClick={handleSyncAll}
               disabled={syncingAll}
-              className="px-3 py-1 rounded-lg text-xs font-semibold bg-emerald-500 hover:bg-emerald-400 text-black flex items-center gap-1.5 transition-all shadow-sm disabled:opacity-50"
+              className="flex-1 sm:flex-none justify-center px-2.5 sm:px-3 py-1 rounded-lg text-xs font-semibold bg-emerald-500 hover:bg-emerald-400 text-black flex items-center gap-1.5 transition-all shadow-sm disabled:opacity-50"
             >
               <RefreshCw className={`size-3 ${syncingAll ? "animate-spin" : ""}`} />
-              <span>{syncingAll ? "Syncing Repos..." : "Sync Now"}</span>
+              <span>{syncingAll ? "Syncing..." : "Sync Now"}</span>
             </button>
           </div>
         </div>
 
         {/* Inner App Navigation Tabs */}
-        <div className="flex items-center gap-4 px-6 pt-4 border-b border-white/5 text-xs font-medium text-zinc-400">
+        <div className="flex items-center gap-2 sm:gap-4 px-3 sm:px-6 pt-3 sm:pt-4 border-b border-white/5 text-xs font-medium text-zinc-400 overflow-x-auto scrollbar-none whitespace-nowrap">
           <button
             onClick={() => setActiveTab("projects")}
-            className={`pb-3 flex items-center gap-2 border-b-2 transition-all ${
+            className={`pb-3 flex items-center gap-2 border-b-2 transition-all shrink-0 ${
               activeTab === "projects"
                 ? "border-emerald-400 text-white font-semibold"
                 : "border-transparent hover:text-zinc-200"
@@ -202,7 +204,7 @@ export function DesktopDashboardShowcase() {
           </button>
           <button
             onClick={() => setActiveTab("history")}
-            className={`pb-3 flex items-center gap-2 border-b-2 transition-all ${
+            className={`pb-3 flex items-center gap-2 border-b-2 transition-all shrink-0 ${
               activeTab === "history"
                 ? "border-emerald-400 text-white font-semibold"
                 : "border-transparent hover:text-zinc-200"
@@ -213,7 +215,7 @@ export function DesktopDashboardShowcase() {
           </button>
           <button
             onClick={() => setActiveTab("settings")}
-            className={`pb-3 flex items-center gap-2 border-b-2 transition-all ${
+            className={`pb-3 flex items-center gap-2 border-b-2 transition-all shrink-0 ${
               activeTab === "settings"
                 ? "border-emerald-400 text-white font-semibold"
                 : "border-transparent hover:text-zinc-200"
@@ -226,11 +228,11 @@ export function DesktopDashboardShowcase() {
 
         {/* Tab 1: Active Projects List */}
         {activeTab === "projects" && (
-          <div className="p-6 space-y-4">
+          <div className="p-3.5 sm:p-6 space-y-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-zinc-400 pb-2">
               <span className="flex items-center gap-1.5">
-                <span className="size-2 rounded-full bg-cyan-400 animate-pulse" />
-                <span>Automatically tracking open IDE workspace windows (VS Code, Cursor, JetBrains, etc.)</span>
+                <span className="size-2 rounded-full bg-cyan-400 animate-pulse shrink-0" />
+                <span>Automatically tracking open IDE workspace windows</span>
               </span>
               <span className="text-zinc-500 font-mono text-[11px]">
                 Click Pause or Commit This to control behavior
@@ -241,7 +243,7 @@ export function DesktopDashboardShowcase() {
               {repos.map((repo) => (
                 <div
                   key={repo.id}
-                  className={`p-4 rounded-xl border transition-all ${
+                  className={`p-3.5 sm:p-4 rounded-xl border transition-all ${
                     repo.isPaused
                       ? "border-white/5 bg-white/[0.01] opacity-70"
                       : repo.status === "dirty"
@@ -249,11 +251,13 @@ export function DesktopDashboardShowcase() {
                       : "border-white/10 bg-[#0E1119]"
                   }`}
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                    <div className="space-y-1">
-                      <div className="flex items-center gap-2.5">
-                        <FolderGit2 className={`size-4 ${repo.isPaused ? "text-zinc-500" : "text-emerald-400"}`} />
-                        <span className="text-sm font-semibold text-white">{repo.name}</span>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+                    <div className="space-y-1 min-w-0">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <div className="flex items-center gap-2">
+                          <FolderGit2 className={`size-4 shrink-0 ${repo.isPaused ? "text-zinc-500" : "text-emerald-400"}`} />
+                          <span className="text-sm font-semibold text-white">{repo.name}</span>
+                        </div>
                         <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-white/5 text-zinc-300 border border-white/5">
                           {repo.branch}
                         </span>
@@ -277,10 +281,10 @@ export function DesktopDashboardShowcase() {
                     </div>
 
                     {/* Action buttons per repo */}
-                    <div className="flex items-center gap-2 shrink-0">
+                    <div className="flex items-center gap-2 w-full sm:w-auto shrink-0 pt-1 sm:pt-0">
                       <button
                         onClick={() => togglePauseRepo(repo.id)}
-                        className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${
+                        className={`flex-1 sm:flex-none justify-center px-3 py-1.5 rounded-lg text-xs font-medium border transition-all text-center ${
                           repo.isPaused
                             ? "border-emerald-500/30 text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20"
                             : "border-amber-500/30 text-amber-300 bg-amber-500/10 hover:bg-amber-500/20"
@@ -291,7 +295,7 @@ export function DesktopDashboardShowcase() {
                       <button
                         onClick={() => handleSyncSingle(repo.id)}
                         disabled={syncingId === repo.id || repo.status === "clean"}
-                        className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/5 hover:bg-white/10 border border-white/10 text-white disabled:opacity-40 transition-all flex items-center gap-1.5"
+                        className="flex-1 sm:flex-none justify-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/5 hover:bg-white/10 border border-white/10 text-white disabled:opacity-40 transition-all flex items-center gap-1.5"
                       >
                         <RefreshCw className={`size-3 ${syncingId === repo.id ? "animate-spin" : ""}`} />
                         <span>Commit This</span>
@@ -300,7 +304,7 @@ export function DesktopDashboardShowcase() {
                   </div>
 
                   {repo.lastCommit && (
-                    <div className="mt-3 pt-3 border-t border-white/5 flex items-center justify-between text-xs text-zinc-400">
+                    <div className="mt-3 pt-3 border-t border-white/5 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-zinc-400 gap-1.5">
                       <span className="truncate pr-4 font-mono text-[11px] text-zinc-300">
                         {repo.lastCommit}
                       </span>
@@ -318,45 +322,45 @@ export function DesktopDashboardShowcase() {
 
         {/* Tab 2: Activity History */}
         {activeTab === "history" && (
-          <div className="p-6 space-y-4">
+          <div className="p-3.5 sm:p-6 space-y-4">
             <div className="text-xs text-zinc-400 pb-2">
               Real-time audit log of commits triggered by laptop lid close events or manual triggers.
             </div>
             <div className="space-y-3 font-mono text-xs">
-              <div className="p-3 rounded-lg bg-black/40 border border-white/5 flex items-start justify-between gap-4">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="size-2 rounded-full bg-emerald-400" />
+              <div className="p-3 rounded-lg bg-black/40 border border-white/5 flex flex-col sm:flex-row sm:items-start justify-between gap-2 sm:gap-4">
+                <div className="space-y-1 min-w-0">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="size-2 rounded-full bg-emerald-400 shrink-0" />
                     <span className="font-semibold text-white">auth-gateway</span>
                     <span className="text-zinc-500">&bull; feat/jwt-tokens</span>
                   </div>
-                  <p className="text-emerald-400">🔒 lid-close: add JWT verification middleware and handle session expiry</p>
+                  <p className="text-emerald-400 break-words">🔒 lid-close: add JWT verification middleware and handle session expiry</p>
                   <p className="text-zinc-500 text-[11px]">2 files changed (+48, -12) &bull; Synced with origin/feat/jwt-tokens</p>
                 </div>
                 <span className="text-[11px] text-zinc-500 shrink-0">10 mins ago</span>
               </div>
 
-              <div className="p-3 rounded-lg bg-black/40 border border-white/5 flex items-start justify-between gap-4">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="size-2 rounded-full bg-emerald-400" />
+              <div className="p-3 rounded-lg bg-black/40 border border-white/5 flex flex-col sm:flex-row sm:items-start justify-between gap-2 sm:gap-4">
+                <div className="space-y-1 min-w-0">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="size-2 rounded-full bg-emerald-400 shrink-0" />
                     <span className="font-semibold text-white">backend-core</span>
                     <span className="text-zinc-500">&bull; perf/db-pool</span>
                   </div>
-                  <p className="text-emerald-400">🔒 lid-close: refactor postgres connection pool with acquisition timeouts</p>
+                  <p className="text-emerald-400 break-words">🔒 lid-close: refactor postgres connection pool with acquisition timeouts</p>
                   <p className="text-zinc-500 text-[11px]">3 files changed (+34, -19) &bull; Synced with origin/perf/db-pool</p>
                 </div>
                 <span className="text-[11px] text-zinc-500 shrink-0">42 mins ago</span>
               </div>
 
-              <div className="p-3 rounded-lg bg-black/40 border border-white/5 flex items-start justify-between gap-4">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="size-2 rounded-full bg-zinc-400" />
+              <div className="p-3 rounded-lg bg-black/40 border border-white/5 flex flex-col sm:flex-row sm:items-start justify-between gap-2 sm:gap-4">
+                <div className="space-y-1 min-w-0">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="size-2 rounded-full bg-zinc-400 shrink-0" />
                     <span className="font-semibold text-white">secret-vault-engine</span>
                     <span className="text-zinc-500">&bull; main (Fallback Mode)</span>
                   </div>
-                  <p className="text-zinc-300">[LidCommit] auto-save at 2026-10-31 09:15</p>
+                  <p className="text-zinc-300 break-words">[LidCommit] auto-save at 2026-10-31 09:15</p>
                   <p className="text-zinc-500 text-[11px]">1 file changed &bull; Fallback timestamp triggered (No API key required)</p>
                 </div>
                 <span className="text-[11px] text-zinc-500 shrink-0">2 hours ago</span>
@@ -367,7 +371,7 @@ export function DesktopDashboardShowcase() {
 
         {/* Tab 3: Settings & Fallback Info */}
         {activeTab === "settings" && (
-          <div className="p-6 space-y-6">
+          <div className="p-3.5 sm:p-6 space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-3">
                 <div className="flex items-center gap-2 text-sm font-semibold text-white">

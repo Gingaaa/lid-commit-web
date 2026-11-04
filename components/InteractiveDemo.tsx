@@ -91,35 +91,35 @@ export function InteractiveDemo() {
   };
 
   return (
-    <div className="relative rounded-2xl border border-white/10 bg-[#0E1017]/90 p-6 md:p-8 backdrop-blur-xl shadow-2xl overflow-hidden">
+    <div className="relative rounded-2xl border border-white/10 bg-[#0E1017]/90 p-4 sm:p-6 md:p-8 backdrop-blur-xl shadow-2xl overflow-hidden">
       {/* Background glow element */}
       <div className="absolute -top-32 -right-32 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header with status badge */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/5">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 sm:pb-6 border-b border-white/5">
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-2">
             <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
             Live Simulated Pipeline
           </div>
-          <h3 className="text-xl font-semibold text-white tracking-tight">
+          <h3 className="text-lg sm:text-xl font-semibold text-white tracking-tight">
             See how LidCommit crafts commit messages
           </h3>
-          <p className="text-sm text-zinc-400">
+          <p className="text-xs sm:text-sm text-zinc-400">
             Select a project scenario below to observe how the local diff is transformed into a clean commit.
           </p>
         </div>
 
         {/* Scenario selectors */}
-        <div className="flex items-center gap-1.5 p-1 bg-black/40 rounded-xl border border-white/5">
+        <div className="flex items-center gap-1.5 p-1 bg-black/40 rounded-xl border border-white/5 overflow-x-auto scrollbar-none whitespace-nowrap w-full sm:w-auto">
           {scenarios.map((scenario) => (
             <button
               key={scenario.id}
               onClick={() => setActiveTab(scenario.id)}
-              className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all ${
+              className={`flex-1 sm:flex-none px-3 py-1.5 text-xs font-medium rounded-lg transition-all text-center shrink-0 ${
                 activeTab === scenario.id
-                  ? "bg-white/10 text-white shadow-sm border border-white/10"
+                  ? "bg-white/10 text-white shadow-sm border border-white/10 font-semibold"
                   : "text-zinc-400 hover:text-zinc-200 hover:bg-white/5"
               }`}
             >
@@ -133,20 +133,20 @@ export function InteractiveDemo() {
       <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
         {/* Left: Input Diff */}
         <div className="lg:col-span-7 flex flex-col rounded-xl border border-white/5 bg-[#090A0F] overflow-hidden">
-          <div className="flex items-center justify-between px-4 py-3 bg-white/[0.02] border-b border-white/5 text-xs text-zinc-400">
-            <div className="flex items-center gap-2">
-              <GitBranch className="size-3.5 text-emerald-400" />
-              <span className="font-mono text-zinc-300">{current.repo}</span>
+          <div className="flex flex-wrap items-center justify-between px-3.5 sm:px-4 py-2.5 sm:py-3 bg-white/[0.02] border-b border-white/5 text-xs text-zinc-400 gap-2">
+            <div className="flex items-center gap-2 min-w-0">
+              <GitBranch className="size-3.5 text-emerald-400 shrink-0" />
+              <span className="font-mono text-zinc-300 truncate">{current.repo}</span>
               <span className="text-zinc-600">/</span>
-              <span className="font-mono text-emerald-400/90">{current.branch}</span>
+              <span className="font-mono text-emerald-400/90 truncate">{current.branch}</span>
             </div>
-            <div className="flex items-center gap-2 font-mono text-[11px]">
-              <span className="text-emerald-400">+{current.insertions}</span>
-              <span className="text-rose-400">-{current.deletions}</span>
+            <div className="flex items-center gap-2 font-mono text-[11px] shrink-0">
+              <span className="text-emerald-400 font-semibold">+{current.insertions}</span>
+              <span className="text-rose-400 font-semibold">-{current.deletions}</span>
             </div>
           </div>
 
-          <div className="p-4 font-mono text-xs overflow-x-auto leading-relaxed text-zinc-300">
+          <div className="p-3.5 sm:p-4 font-mono text-xs overflow-x-auto leading-relaxed text-zinc-300">
             <pre className="whitespace-pre">
               {current.diffSnippet.split("\n").map((line, idx) => {
                 let color = "text-zinc-400";

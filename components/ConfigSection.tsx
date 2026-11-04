@@ -48,24 +48,24 @@ sound = false
   };
 
   return (
-    <div id="configuration" className="relative rounded-2xl border border-white/10 bg-[#0E1017]/80 p-6 md:p-10 backdrop-blur-xl">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-white/5">
+    <div id="configuration" className="relative rounded-2xl border border-white/10 bg-[#0E1017]/80 p-4 sm:p-6 md:p-10 backdrop-blur-xl">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6 pb-6 border-b border-white/5">
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-3">
             <Sliders className="size-3.5" />
             Declarative TOML Configuration
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-white">
             Configurable down to every detail
           </h2>
-          <p className="text-zinc-400 text-sm mt-1 max-w-xl">
+          <p className="text-zinc-400 text-xs sm:text-sm mt-1 max-w-xl">
             Tweak AI models, customize file limits, ignore sensitive directories, or switch seamlessly to 100% offline local LLMs.
           </p>
         </div>
 
         <button
           onClick={copyConfig}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-zinc-200 transition-all self-start md:self-auto"
+          className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-zinc-200 transition-all w-full sm:w-auto text-center"
         >
           {copied ? (
             <>

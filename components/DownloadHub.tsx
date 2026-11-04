@@ -22,31 +22,31 @@ export function DownloadHub() {
   const [os, setOs] = useState<"windows" | "macos" | "linux" | "source">("windows");
 
   return (
-    <div id="download-hub" className="relative rounded-3xl border border-white/10 bg-[#0E1017]/90 p-6 md:p-12 backdrop-blur-2xl overflow-hidden shadow-2xl">
+    <div id="download-hub" className="relative rounded-3xl border border-white/10 bg-[#0E1017]/90 p-4 sm:p-8 md:p-12 backdrop-blur-2xl overflow-hidden shadow-2xl">
       {/* Dynamic Ambient Background Glows */}
       <div className="absolute -top-32 -right-32 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header */}
-      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-8 border-b border-white/5">
+      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 sm:pb-8 border-b border-white/5">
         <div className="space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
             <Package className="size-3.5" />
             <span>Zero-Compiling Required &bull; v0.2.0 Released</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
             Download LidCommit
           </h2>
-          <p className="text-sm md:text-base text-zinc-400 max-w-xl">
+          <p className="text-xs sm:text-sm md:text-base text-zinc-400 max-w-xl">
             Installs just like any standard modern desktop app. No Rust toolchain, terminal commands, or manual compiling needed for end users.
           </p>
         </div>
 
         {/* Operating System Picker Tabs */}
-        <div className="flex flex-wrap items-center gap-1.5 p-1.5 bg-black/60 rounded-2xl border border-white/10 self-start lg:self-auto">
+        <div className="flex flex-wrap items-center gap-1.5 p-1 sm:p-1.5 bg-black/60 rounded-2xl border border-white/10 w-full lg:w-auto">
           <button
             onClick={() => setOs("windows")}
-            className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold rounded-xl transition-all duration-200 ${
+            className={`flex-1 sm:flex-none justify-center flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 text-xs font-bold rounded-xl transition-all duration-200 ${
               os === "windows"
                 ? "bg-emerald-500 text-black shadow-lg shadow-emerald-500/20 scale-[1.02]"
                 : "text-zinc-400 hover:text-white hover:bg-white/5"
@@ -57,7 +57,7 @@ export function DownloadHub() {
           </button>
           <button
             onClick={() => setOs("macos")}
-            className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold rounded-xl transition-all duration-200 ${
+            className={`flex-1 sm:flex-none justify-center flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 text-xs font-bold rounded-xl transition-all duration-200 ${
               os === "macos"
                 ? "bg-emerald-500 text-black shadow-lg shadow-emerald-500/20 scale-[1.02]"
                 : "text-zinc-400 hover:text-white hover:bg-white/5"
@@ -68,7 +68,7 @@ export function DownloadHub() {
           </button>
           <button
             onClick={() => setOs("linux")}
-            className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold rounded-xl transition-all duration-200 ${
+            className={`flex-1 sm:flex-none justify-center flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 text-xs font-bold rounded-xl transition-all duration-200 ${
               os === "linux"
                 ? "bg-emerald-500 text-black shadow-lg shadow-emerald-500/20 scale-[1.02]"
                 : "text-zinc-400 hover:text-white hover:bg-white/5"
@@ -79,7 +79,7 @@ export function DownloadHub() {
           </button>
           <button
             onClick={() => setOs("source")}
-            className={`flex items-center gap-2 px-4 py-2.5 text-xs font-bold rounded-xl transition-all duration-200 ${
+            className={`flex-1 sm:flex-none justify-center flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 text-xs font-bold rounded-xl transition-all duration-200 ${
               os === "source"
                 ? "bg-emerald-500 text-black shadow-lg shadow-emerald-500/20 scale-[1.02]"
                 : "text-zinc-400 hover:text-white hover:bg-white/5"
@@ -92,14 +92,14 @@ export function DownloadHub() {
       </div>
 
       {/* OS Tab Content with Animated Transitions */}
-      <div className="mt-8 transition-all duration-300">
+      <div className="mt-6 sm:mt-8 transition-all duration-300">
         {/* WINDOWS TAB */}
         {os === "windows" && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center animate-in fade-in duration-300">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center animate-in fade-in duration-300">
             {/* Download Card */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-emerald-500/[0.08] via-emerald-500/[0.02] to-transparent border border-emerald-500/30 space-y-5">
-                <div className="flex items-center justify-between">
+            <div className="lg:col-span-7 space-y-5 sm:space-y-6">
+              <div className="p-4 sm:p-6 md:p-8 rounded-2xl bg-gradient-to-br from-emerald-500/[0.08] via-emerald-500/[0.02] to-transparent border border-emerald-500/30 space-y-4 sm:space-y-5">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
                     <Sparkles className="size-3.5" />
                     Recommended Windows Install
@@ -108,22 +108,22 @@ export function DownloadHub() {
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-bold text-white tracking-tight">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                     LidCommit 1-Click Setup Wizard
                   </h3>
-                  <p className="text-sm text-zinc-300 mt-1.5 leading-relaxed">
-                    Double-click and run. Installs cleanly to <code className="text-emerald-300 bg-black/40 px-1.5 py-0.5 rounded text-xs">%LocalAppData%\Programs\LidCommit</code> with automatic Start Menu and Desktop shortcuts.
+                  <p className="text-xs sm:text-sm text-zinc-300 mt-1.5 leading-relaxed">
+                    Double-click and run. Installs cleanly to <code className="text-emerald-300 bg-black/40 px-1.5 py-0.5 rounded text-xs break-all">%LocalAppData%\Programs\LidCommit</code> with automatic Start Menu and Desktop shortcuts.
                   </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
                   <a
                     href="https://github.com/Gingaaa/lid-commit/releases/latest"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-sm transition-all shadow-xl shadow-emerald-500/25 hover:scale-[1.02] active:scale-[0.98]"
+                    className="inline-flex items-center justify-center gap-2.5 px-5 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-sm transition-all shadow-xl shadow-emerald-500/25 hover:scale-[1.02] active:scale-[0.98] text-center"
                   >
-                    <Download className="size-5" />
+                    <Download className="size-5 shrink-0" />
                     <span>Download LidCommit-Setup-x86_64.exe</span>
                   </a>
 
@@ -131,7 +131,7 @@ export function DownloadHub() {
                     href="https://github.com/Gingaaa/lid-commit/releases/latest"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-5 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-xs transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-3 sm:py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-xs transition-all text-center"
                   >
                     <span>Portable .zip archive</span>
                     <ExternalLink className="size-3 text-zinc-400" />
@@ -218,10 +218,10 @@ export function DownloadHub() {
 
         {/* MACOS TAB */}
         {os === "macos" && (
-          <div className="p-6 md:p-8 rounded-2xl bg-black/40 border border-white/10 space-y-6 animate-in fade-in duration-300">
+          <div className="p-4 sm:p-6 md:p-8 rounded-2xl bg-black/40 border border-white/10 space-y-5 sm:space-y-6 animate-in fade-in duration-300">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
-                <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                <h3 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
                   <Apple className="size-5 text-zinc-300" />
                   macOS Pre-Compiled Release
                 </h3>
@@ -230,23 +230,23 @@ export function DownloadHub() {
                 </p>
               </div>
 
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-wrap items-center gap-2.5 w-full md:w-auto">
                 <a
                   href="https://github.com/Gingaaa/lid-commit/releases/latest"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs transition-all shadow-md flex items-center gap-2"
+                  className="flex-1 sm:flex-none justify-center px-4 sm:px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs transition-all shadow-md flex items-center gap-2 text-center"
                 >
-                  <Download className="size-4" />
+                  <Download className="size-4 shrink-0" />
                   <span>Apple Silicon (aarch64)</span>
                 </a>
                 <a
                   href="https://github.com/Gingaaa/lid-commit/releases/latest"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-xs transition-all flex items-center gap-2"
+                  className="flex-1 sm:flex-none justify-center px-4 sm:px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-xs transition-all flex items-center gap-2 text-center"
                 >
-                  <Download className="size-4" />
+                  <Download className="size-4 shrink-0" />
                   <span>Intel (x86_64)</span>
                 </a>
               </div>
@@ -265,10 +265,10 @@ lid-commit`}
 
         {/* LINUX TAB */}
         {os === "linux" && (
-          <div className="p-6 md:p-8 rounded-2xl bg-black/40 border border-white/10 space-y-6 animate-in fade-in duration-300">
+          <div className="p-4 sm:p-6 md:p-8 rounded-2xl bg-black/40 border border-white/10 space-y-5 sm:space-y-6 animate-in fade-in duration-300">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
-                <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                <h3 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
                   <Cpu className="size-5 text-zinc-300" />
                   Linux Pre-Compiled Binary
                 </h3>
@@ -281,9 +281,9 @@ lid-commit`}
                 href="https://github.com/Gingaaa/lid-commit/releases/latest"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs transition-all shadow-md flex items-center gap-2 self-start md:self-auto"
+                className="w-full sm:w-auto text-center justify-center px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs transition-all shadow-md flex items-center gap-2 self-start md:self-auto"
               >
-                <Download className="size-4" />
+                <Download className="size-4 shrink-0" />
                 <span>Download lid-commit-linux-x86_64.tar.gz</span>
               </a>
             </div>
@@ -301,10 +301,10 @@ sudo mv lid-commit /usr/local/bin/
 
         {/* SOURCE CODE TAB */}
         {os === "source" && (
-          <div className="p-6 md:p-8 rounded-2xl bg-black/40 border border-white/10 space-y-6 animate-in fade-in duration-300">
+          <div className="p-4 sm:p-6 md:p-8 rounded-2xl bg-black/40 border border-white/10 space-y-5 sm:space-y-6 animate-in fade-in duration-300">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
-                <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                <h3 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
                   <Terminal className="size-5 text-emerald-400" />
                   Build from Source (Developers &amp; Contributors)
                 </h3>
@@ -317,7 +317,7 @@ sudo mv lid-commit /usr/local/bin/
                 href="https://github.com/Gingaaa/lid-commit"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-xs transition-all flex items-center gap-2 self-start md:self-auto"
+                className="w-full sm:w-auto text-center justify-center px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-xs transition-all flex items-center gap-2 self-start md:self-auto"
               >
                 <ExternalLink className="size-4" />
                 <span>GitHub Repository</span>

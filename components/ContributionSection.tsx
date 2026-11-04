@@ -32,36 +32,36 @@ export function ContributionSection() {
   };
 
   return (
-    <div id="contribute" className="relative rounded-3xl border border-white/10 bg-[#0E1017]/90 p-6 md:p-12 backdrop-blur-2xl overflow-hidden shadow-2xl space-y-10">
+    <div id="contribute" className="relative rounded-3xl border border-white/10 bg-[#0E1017]/90 p-4 sm:p-8 md:p-12 backdrop-blur-2xl overflow-hidden shadow-2xl space-y-8 sm:space-y-10">
       {/* Background ambient lighting */}
       <div className="absolute top-0 right-10 w-96 h-96 bg-rose-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Section Header */}
-      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-white/5 pb-8">
-        <div className="space-y-4 max-w-2xl">
+      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-white/5 pb-6 sm:pb-8">
+        <div className="space-y-3 sm:space-y-4 max-w-2xl">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-rose-500/10 text-rose-300 border border-rose-500/20">
             <Heart className="size-3.5 text-rose-400 fill-rose-400/30" />
             <span>Official Community Guidelines &bull; Production-Ready Governance</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
-            Built with Passion. <br />
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+            Built with Passion. <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
               Engineered for Open Source.
             </span>
           </h2>
-          <p className="text-sm md:text-base text-zinc-300 leading-relaxed">
+          <p className="text-xs sm:text-sm md:text-base text-zinc-300 leading-relaxed">
             LidCommit follows standard open-source governance modeled after <strong className="text-white">Next.js</strong> and <strong className="text-white">shadcn/ui</strong>. Explore our standardized PR workflow, conventional commit guidelines, issue templates, and intellectual property policies.
           </p>
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-wrap items-center gap-3 self-start lg:self-auto">
+        <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
           <a
             href="https://github.com/Gingaaa/lid-commit"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-black font-extrabold text-sm hover:bg-zinc-200 transition-all shadow-xl hover:scale-[1.02] active:scale-[0.98]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-black font-extrabold text-sm hover:bg-zinc-200 transition-all shadow-xl hover:scale-[1.02] active:scale-[0.98] text-center"
           >
             <GithubIcon className="size-4" />
             <span>GitHub Repository</span>
@@ -71,10 +71,10 @@ export function ContributionSection() {
       </div>
 
       {/* Interactive Tabs */}
-      <div className="flex flex-wrap items-center gap-2 p-1.5 bg-black/50 rounded-2xl border border-white/10 w-fit">
+      <div className="flex flex-wrap items-center gap-1.5 p-1 sm:p-1.5 bg-black/50 rounded-2xl border border-white/10 w-full sm:w-fit">
         <button
           onClick={() => setActiveTab("workflow")}
-          className={`flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl transition-all duration-200 ${
+          className={`flex-1 sm:flex-none justify-center flex items-center gap-2 px-3 sm:px-4 py-2 text-xs font-bold rounded-xl transition-all duration-200 ${
             activeTab === "workflow"
               ? "bg-emerald-500 text-black shadow-md font-extrabold"
               : "text-zinc-400 hover:text-white hover:bg-white/5"
@@ -86,7 +86,7 @@ export function ContributionSection() {
 
         <button
           onClick={() => setActiveTab("commits")}
-          className={`flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl transition-all duration-200 ${
+          className={`flex-1 sm:flex-none justify-center flex items-center gap-2 px-3 sm:px-4 py-2 text-xs font-bold rounded-xl transition-all duration-200 ${
             activeTab === "commits"
               ? "bg-emerald-500 text-black shadow-md font-extrabold"
               : "text-zinc-400 hover:text-white hover:bg-white/5"
@@ -98,7 +98,7 @@ export function ContributionSection() {
 
         <button
           onClick={() => setActiveTab("templates")}
-          className={`flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl transition-all duration-200 ${
+          className={`flex-1 sm:flex-none justify-center flex items-center gap-2 px-3 sm:px-4 py-2 text-xs font-bold rounded-xl transition-all duration-200 ${
             activeTab === "templates"
               ? "bg-emerald-500 text-black shadow-md font-extrabold"
               : "text-zinc-400 hover:text-white hover:bg-white/5"
@@ -110,7 +110,7 @@ export function ContributionSection() {
 
         <button
           onClick={() => setActiveTab("governance")}
-          className={`flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl transition-all duration-200 ${
+          className={`flex-1 sm:flex-none justify-center flex items-center gap-2 px-3 sm:px-4 py-2 text-xs font-bold rounded-xl transition-all duration-200 ${
             activeTab === "governance"
               ? "bg-emerald-500 text-black shadow-md font-extrabold"
               : "text-zinc-400 hover:text-white hover:bg-white/5"

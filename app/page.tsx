@@ -45,34 +45,34 @@ export default function Home() {
       {/* Navigation */}
       <Navbar />
 
-      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 space-y-24 md:space-y-32">
+      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-20 space-y-16 sm:space-y-24 md:space-y-32">
         {/* ========================================================= */}
         {/* 1. HERO SECTION */}
         {/* ========================================================= */}
-        <section className="flex flex-col items-center text-center space-y-8 pt-4 md:pt-8">
+        <section className="flex flex-col items-center text-center space-y-6 sm:space-y-8 pt-2 sm:pt-4 md:pt-8">
           {/* Main App Icon with Ambient Glow */}
           <div className="relative group">
             <div className="absolute -inset-2 rounded-3xl bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-500 opacity-35 blur-xl group-hover:opacity-65 transition duration-500 pointer-events-none" />
-            <div className="relative size-20 md:size-24 rounded-3xl overflow-hidden border border-white/10 shadow-2xl p-1 bg-[#08090C]/90 backdrop-blur-sm group-hover:scale-105 group-hover:border-emerald-500/50 transition-all duration-300">
+            <div className="relative size-16 sm:size-20 md:size-24 rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 shadow-2xl p-1 bg-[#08090C]/90 backdrop-blur-sm group-hover:scale-105 group-hover:border-emerald-500/50 transition-all duration-300">
               <Image
                 src="/lidcommit-icon.png"
                 alt="LidCommit App Icon"
                 width={96}
                 height={96}
                 priority
-                className="size-full rounded-2xl object-cover"
+                className="size-full rounded-xl sm:rounded-2xl object-cover"
               />
             </div>
           </div>
 
           {/* Pill Badge with Pulse */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/[0.04] border border-white/10 text-zinc-300 shadow-inner hover:border-emerald-500/40 transition-colors cursor-default">
-            <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold bg-white/[0.04] border border-white/10 text-zinc-300 shadow-inner hover:border-emerald-500/40 transition-colors cursor-default max-w-full text-center leading-snug">
+            <span className="size-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
             <span>v0.2.0 Released &bull; 1-Click Windows Setup &bull; Native Desktop GUI</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-4xl leading-[1.12]">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-4xl leading-[1.15] sm:leading-[1.12]">
             Close your laptop lid. <br />
             <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
               Your code is already committed.
@@ -80,25 +80,25 @@ export default function Home() {
           </h1>
 
           {/* Subtitle */}
-          <p className="max-w-2xl text-base sm:text-lg text-zinc-400 leading-relaxed">
+          <p className="max-w-2xl text-sm sm:text-base md:text-lg text-zinc-400 leading-relaxed px-1 sm:px-0">
             Never lose progress again. <strong className="text-zinc-200">LidCommit</strong> sits in your system tray and monitors active IDE workspaces. When you close your laptop, it synthesizes AI commit messages, commits your diff, and pushes directly to GitHub.
           </p>
 
           {/* CTA Buttons with Hover Micro-Animations */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 w-full sm:w-auto">
             <a
               href="#download-hub"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-sm transition-all duration-200 shadow-xl shadow-emerald-500/25 hover:scale-[1.03] active:scale-[0.98]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-sm transition-all duration-200 shadow-xl shadow-emerald-500/25 hover:scale-[1.03] active:scale-[0.98] text-center"
             >
-              <Download className="size-4" />
+              <Download className="size-4 shrink-0" />
               <span>Download for Windows (Setup .exe)</span>
             </a>
 
             <a
               href="#desktop-dashboard"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-sm transition-all duration-200 hover:border-white/25 hover:scale-[1.02]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-sm transition-all duration-200 hover:border-white/25 hover:scale-[1.02] text-center"
             >
-              <Monitor className="size-4 text-emerald-400" />
+              <Monitor className="size-4 text-emerald-400 shrink-0" />
               <span>Explore Desktop GUI</span>
             </a>
 
@@ -106,15 +106,15 @@ export default function Home() {
               href="https://github.com/Gingaaa/lid-commit"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-sm transition-all duration-200 hover:border-white/25 hover:scale-[1.02]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-sm transition-all duration-200 hover:border-white/25 hover:scale-[1.02] text-center"
             >
-              <GithubIcon className="size-4" />
+              <GithubIcon className="size-4 shrink-0" />
               <span>Star on GitHub</span>
             </a>
           </div>
 
           {/* Hero Feature Highlights with Interactive Hover Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-4xl pt-4 text-left">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 w-full max-w-4xl pt-4 text-left">
             <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.02] hover-card-glow cursor-default">
               <div className="text-xs font-semibold text-white flex items-center gap-2 mb-1">
                 <Monitor className="size-3.5 text-emerald-400" />
@@ -164,17 +164,17 @@ export default function Home() {
         {/* 4. CRUCIAL WINDOWS POWER SETTING WALKTHROUGH */}
         {/* ========================================================= */}
         <ViewportReveal id="windows-power" className="scroll-mt-24">
-          <div className="rounded-2xl border border-amber-500/25 bg-gradient-to-r from-amber-500/[0.07] via-amber-500/[0.03] to-transparent p-6 md:p-10 relative overflow-hidden hover-card-glow">
-            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
-              <div className="space-y-4 max-w-2xl">
+          <div className="rounded-2xl border border-amber-500/25 bg-gradient-to-r from-amber-500/[0.07] via-amber-500/[0.03] to-transparent p-4 sm:p-6 md:p-10 relative overflow-hidden hover-card-glow">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8">
+              <div className="space-y-3 sm:space-y-4 max-w-2xl">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30">
                   <AlertTriangle className="size-3.5" />
                   Crucial Windows 10/11 Setup
                 </div>
-                <h3 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight">
                   Configure &quot;When I close the lid&quot; to &quot;Do nothing&quot;
                 </h3>
-                <p className="text-xs md:text-sm text-zinc-300 leading-relaxed">
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
                   To allow LidCommit to inspect your repositories, stage changes, query Gemini/Ollama, and push to GitHub while the lid is shut, Windows must not abruptly sever the network card and sleep the CPU mid-push.
                 </p>
                 <div className="space-y-2.5 pt-2 text-xs text-zinc-300 font-mono">
@@ -193,7 +193,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="p-5 rounded-xl bg-black/60 border border-white/10 font-mono text-xs text-zinc-300 space-y-3 shrink-0 lg:max-w-md shadow-xl">
+              <div className="p-4 sm:p-5 rounded-xl bg-black/60 border border-white/10 font-mono text-xs text-zinc-300 space-y-3 w-full lg:max-w-md shrink-0 shadow-xl">
                 <div className="text-[11px] text-zinc-400 uppercase tracking-wide border-b border-white/5 pb-2 flex items-center justify-between">
                   <span>Power Setting Summary</span>
                   <span className="text-emerald-400 font-semibold">Ready for Sync</span>
@@ -229,25 +229,25 @@ export default function Home() {
         {/* ========================================================= */}
         {/* 6. HOW IT WORKS - 4 STEP ARCHITECTURE PIPELINE */}
         {/* ========================================================= */}
-        <ViewportReveal id="how-it-works" className="scroll-mt-24 space-y-12">
+        <ViewportReveal id="how-it-works" className="scroll-mt-24 space-y-8 sm:space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
               <Zap className="size-3.5" />
               Autonomous Pipeline
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white">
               How LidCommit works under the hood
             </h2>
-            <p className="text-sm text-zinc-400">
+            <p className="text-xs sm:text-sm text-zinc-400">
               A frictionless zero-click automation that turns your physical laptop lid motion into git commits.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {/* Step 1 */}
-            <div className="rounded-2xl border border-white/10 bg-[#0E1017] p-6 flex flex-col justify-between hover-card-glow group">
+            <div className="rounded-2xl border border-white/10 bg-[#0E1017] p-5 sm:p-6 flex flex-col justify-between hover-card-glow group">
               <div>
-                <div className="size-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold mb-5 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all">
+                <div className="size-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold mb-4 sm:mb-5 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all">
                   <Laptop className="size-5" />
                 </div>
                 <span className="text-[11px] font-mono font-semibold text-emerald-400 uppercase tracking-wider">Step 01</span>
@@ -259,9 +259,9 @@ export default function Home() {
             </div>
 
             {/* Step 2 */}
-            <div className="rounded-2xl border border-white/10 bg-[#0E1017] p-6 flex flex-col justify-between hover-card-glow group">
+            <div className="rounded-2xl border border-white/10 bg-[#0E1017] p-5 sm:p-6 flex flex-col justify-between hover-card-glow group">
               <div>
-                <div className="size-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold mb-5 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all">
+                <div className="size-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold mb-4 sm:mb-5 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all">
                   <FolderGit2 className="size-5" />
                 </div>
                 <span className="text-[11px] font-mono font-semibold text-cyan-400 uppercase tracking-wider">Step 02</span>
@@ -273,9 +273,9 @@ export default function Home() {
             </div>
 
             {/* Step 3 */}
-            <div className="rounded-2xl border border-white/10 bg-[#0E1017] p-6 flex flex-col justify-between hover-card-glow group">
+            <div className="rounded-2xl border border-white/10 bg-[#0E1017] p-5 sm:p-6 flex flex-col justify-between hover-card-glow group">
               <div>
-                <div className="size-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 font-bold mb-5 group-hover:scale-110 group-hover:bg-purple-500/20 transition-all">
+                <div className="size-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 font-bold mb-4 sm:mb-5 group-hover:scale-110 group-hover:bg-purple-500/20 transition-all">
                   <Sparkles className="size-5" />
                 </div>
                 <span className="text-[11px] font-mono font-semibold text-purple-400 uppercase tracking-wider">Step 03</span>
@@ -287,9 +287,9 @@ export default function Home() {
             </div>
 
             {/* Step 4 */}
-            <div className="rounded-2xl border border-white/10 bg-[#0E1017] p-6 flex flex-col justify-between hover-card-glow group">
+            <div className="rounded-2xl border border-white/10 bg-[#0E1017] p-5 sm:p-6 flex flex-col justify-between hover-card-glow group">
               <div>
-                <div className="size-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 font-bold mb-5 group-hover:scale-110 group-hover:bg-amber-500/20 transition-all">
+                <div className="size-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 font-bold mb-4 sm:mb-5 group-hover:scale-110 group-hover:bg-amber-500/20 transition-all">
                   <GitPullRequest className="size-5" />
                 </div>
                 <span className="text-[11px] font-mono font-semibold text-amber-400 uppercase tracking-wider">Step 04</span>
@@ -312,24 +312,24 @@ export default function Home() {
         {/* ========================================================= */}
         {/* 8. SAFETY GUARDS - BUILT FOR DEVELOPER TRUST */}
         {/* ========================================================= */}
-        <ViewportReveal id="safety" className="scroll-mt-24 space-y-10">
+        <ViewportReveal id="safety" className="scroll-mt-24 space-y-8 sm:space-y-10">
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-rose-500/10 text-rose-400 border border-rose-500/20">
               <ShieldAlert className="size-3.5" />
               Rock-Solid Safeguards
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white">
               Engineered so it never breaks your git history
             </h2>
-            <p className="text-sm text-zinc-400">
+            <p className="text-xs sm:text-sm text-zinc-400">
               Auto-committers can feel risky without strict boundaries. LidCommit includes comprehensive safety guards that guarantee safe operation.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <div className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
               <div className="flex items-center gap-3">
-                <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-emerald-400">
+                <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-emerald-400 shrink-0">
                   <CheckCircle2 className="size-4" />
                 </div>
                 <h4 className="text-sm font-semibold text-white">Clean Working Tree Check</h4>
@@ -339,9 +339,9 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
+            <div className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
               <div className="flex items-center gap-3">
-                <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-rose-400">
+                <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-rose-400 shrink-0">
                   <ShieldAlert className="size-4" />
                 </div>
                 <h4 className="text-sm font-semibold text-white">50+ Files Guard</h4>
@@ -351,9 +351,9 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
+            <div className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
               <div className="flex items-center gap-3">
-                <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-amber-400">
+                <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-amber-400 shrink-0">
                   <Lock className="size-4" />
                 </div>
                 <h4 className="text-sm font-semibold text-white">Merge Conflict Immunity</h4>
@@ -363,9 +363,9 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
+            <div className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
               <div className="flex items-center gap-3">
-                <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400">
+                <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 shrink-0">
                   <GitPullRequest className="size-4" />
                 </div>
                 <h4 className="text-sm font-semibold text-white">Remote Verification</h4>
@@ -375,9 +375,9 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
+            <div className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
               <div className="flex items-center gap-3">
-                <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-purple-400">
+                <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-purple-400 shrink-0">
                   <Layers className="size-4" />
                 </div>
                 <h4 className="text-sm font-semibold text-white">Custom Excluded Paths</h4>
@@ -387,9 +387,9 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
+            <div className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
               <div className="flex items-center gap-3">
-                <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-teal-400">
+                <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-teal-400 shrink-0">
                   <BellRing className="size-4" />
                 </div>
                 <h4 className="text-sm font-semibold text-white">Loop Prevention &amp; Alerts</h4>
@@ -417,15 +417,15 @@ export default function Home() {
               <Layers className="size-3.5" />
               Rust Architecture
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white">
               Minimal footprint. Maximum reliability.
             </h2>
-            <p className="text-sm text-zinc-400">
+            <p className="text-xs sm:text-sm text-zinc-400">
               Modular Rust code structure built for stability, zero panics, and effortless cross-platform support.
             </p>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-[#0C0E14] p-6 md:p-8 font-mono text-xs text-zinc-300 overflow-x-auto hover-card-glow">
+          <div className="rounded-2xl border border-white/10 bg-[#0C0E14] p-4 sm:p-6 md:p-8 font-mono text-[11px] sm:text-xs text-zinc-300 overflow-x-auto hover-card-glow">
             <pre className="leading-relaxed">
 {`src/
 ├── main.rs              — Daemon entry point, event loop & manual sync handlers
@@ -455,26 +455,26 @@ export default function Home() {
         {/* 12. FINAL CALL TO ACTION */}
         {/* ========================================================= */}
         <ViewportReveal>
-          <section className="rounded-3xl border border-emerald-500/30 bg-gradient-to-r from-emerald-500/10 via-teal-500/5 to-cyan-500/10 p-8 md:p-14 text-center space-y-6 relative overflow-hidden hover-card-glow">
-            <div className="relative size-20 md:size-24 rounded-3xl overflow-hidden border border-emerald-500/30 mx-auto shadow-2xl shadow-emerald-500/25 p-1 bg-[#08090C]/90 hover:scale-105 transition-all duration-300">
+          <section className="rounded-3xl border border-emerald-500/30 bg-gradient-to-r from-emerald-500/10 via-teal-500/5 to-cyan-500/10 p-6 sm:p-10 md:p-14 text-center space-y-5 sm:space-y-6 relative overflow-hidden hover-card-glow">
+            <div className="relative size-16 sm:size-20 md:size-24 rounded-2xl sm:rounded-3xl overflow-hidden border border-emerald-500/30 mx-auto shadow-2xl shadow-emerald-500/25 p-1 bg-[#08090C]/90 hover:scale-105 transition-all duration-300">
               <Image
                 src="/lidcommit-icon.png"
                 alt="LidCommit Icon"
                 width={96}
                 height={96}
-                className="size-full rounded-2xl object-cover"
+                className="size-full rounded-xl sm:rounded-2xl object-cover"
               />
             </div>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white tracking-tight">
               Stop worrying about manual commits before you leave.
             </h2>
-            <p className="max-w-xl mx-auto text-sm sm:text-base text-zinc-300 leading-relaxed">
+            <p className="max-w-xl mx-auto text-xs sm:text-sm md:text-base text-zinc-300 leading-relaxed px-1 sm:px-0">
               Close your laptop, walk out the door, and pull down your work on your next device. Start using LidCommit today.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 w-full sm:w-auto">
               <a
                 href="#download-hub"
-                className="px-7 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-sm transition-all shadow-lg shadow-emerald-500/20 hover:scale-[1.03] active:scale-[0.98]"
+                className="w-full sm:w-auto px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-sm transition-all shadow-lg shadow-emerald-500/20 hover:scale-[1.03] active:scale-[0.98] text-center"
               >
                 Download LidCommit
               </a>
@@ -482,9 +482,9 @@ export default function Home() {
                 href="https://github.com/Gingaaa/lid-commit"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-7 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-sm transition-all flex items-center gap-2 hover:border-white/20 hover:scale-[1.02]"
+                className="w-full sm:w-auto px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-sm transition-all flex items-center justify-center gap-2 hover:border-white/20 hover:scale-[1.02] text-center"
               >
-                <GithubIcon className="size-4" />
+                <GithubIcon className="size-4 shrink-0" />
                 <span>View on GitHub</span>
               </a>
             </div>

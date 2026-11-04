@@ -30,7 +30,7 @@ export function AIProviderSelector() {
   };
 
   return (
-    <div className="relative rounded-3xl border border-white/10 bg-[#0B0D14]/90 p-6 md:p-10 backdrop-blur-2xl overflow-hidden shadow-2xl space-y-8">
+    <div className="relative rounded-3xl border border-white/10 bg-[#0B0D14]/90 p-4 sm:p-8 md:p-10 backdrop-blur-2xl overflow-hidden shadow-2xl space-y-6 sm:space-y-8">
       {/* Dynamic Glow */}
       <div className="absolute top-0 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -40,16 +40,16 @@ export function AIProviderSelector() {
           <Sparkles className="size-3.5" />
           <span>Dynamic In-App Switcher &bull; Real-Time Hot Reload</span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white">
           Choose How Your Commits Are Generated
         </h2>
-        <p className="text-xs md:text-sm text-zinc-400">
+        <p className="text-xs sm:text-sm text-zinc-400">
           Configure your preferred provider in the desktop app with one click. When one is active, the others are safely deactivated, and configurations take effect instantly without restarting.
         </p>
       </div>
 
       {/* 4 Provider Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         {/* Gemini */}
         <button
           onClick={() => setProvider("gemini")}
@@ -160,7 +160,7 @@ export function AIProviderSelector() {
       </div>
 
       {/* Interactive Mock Configuration Panel for Selected Provider */}
-      <div className="rounded-2xl border border-white/10 bg-[#07090E] p-6 space-y-4">
+      <div className="rounded-2xl border border-white/10 bg-[#07090E] p-4 sm:p-6 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/5 pb-4">
           <div className="flex items-center gap-2 text-xs font-semibold text-white">
             <Sliders className="size-4 text-emerald-400" />

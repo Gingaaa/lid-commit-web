@@ -59,9 +59,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full dark antialiased selection:bg-emerald-500/30 selection:text-emerald-300", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
+      className={cn("h-full w-full overflow-x-hidden dark antialiased selection:bg-emerald-500/30 selection:text-emerald-300", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
     >
-      <body className="min-h-full flex flex-col bg-[#08090C] text-[#F3F4F6]">{children}</body>
+      <body className="min-h-full w-full overflow-x-hidden flex flex-col bg-[#08090C] text-[#F3F4F6]">{children}</body>
     </html>
   );
 }
