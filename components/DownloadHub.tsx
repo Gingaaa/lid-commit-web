@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { 
   Download, 
   Monitor, 
@@ -177,8 +178,14 @@ export function DownloadHub() {
               </div>
 
               <div className="py-6 space-y-4 font-mono text-xs text-zinc-300">
-                <div className="size-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-                  <Package className="size-6" />
+                <div className="size-14 rounded-2xl overflow-hidden border border-emerald-500/30 p-0.5 bg-[#08090C] shadow-lg shadow-emerald-500/20">
+                  <Image
+                    src="/lidcommit-icon.png"
+                    alt="LidCommit Icon"
+                    width={56}
+                    height={56}
+                    className="size-full rounded-[14px] object-cover"
+                  />
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-white">Installing LidCommit v0.2.0</h4>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Laptop, Sparkles, GitBranch, ArrowRight, CheckCircle2 } from "lucide-react";
 
 interface DiffScenario {
@@ -206,8 +207,14 @@ export function InteractiveDemo() {
 
             {/* Simulated Desktop Toast Notification */}
             <div className="mt-5 p-3 rounded-lg border border-white/10 bg-[#141722] shadow-lg flex items-start gap-3 animate-in fade-in slide-in-from-bottom-2 duration-300">
-              <div className="size-8 rounded-lg bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center shrink-0">
-                <Laptop className="size-4 text-emerald-400" />
+              <div className="size-8 rounded-lg overflow-hidden border border-emerald-500/30 flex items-center justify-center shrink-0">
+                <Image
+                  src="/lidcommit-icon.png"
+                  alt="LidCommit Icon"
+                  width={32}
+                  height={32}
+                  className="size-full object-cover"
+                />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between">

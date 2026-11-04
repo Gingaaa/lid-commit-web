@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Navbar, Footer } from "@/components/Navigation";
 import { InteractiveDemo } from "@/components/InteractiveDemo";
 import { ConfigSection } from "@/components/ConfigSection";
@@ -48,7 +49,22 @@ export default function Home() {
         {/* ========================================================= */}
         {/* 1. HERO SECTION */}
         {/* ========================================================= */}
-        <section className="flex flex-col items-center text-center space-y-8 pt-4 md:pt-10">
+        <section className="flex flex-col items-center text-center space-y-8 pt-4 md:pt-8">
+          {/* Main App Icon with Ambient Glow */}
+          <div className="relative group">
+            <div className="absolute -inset-2 rounded-3xl bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-500 opacity-35 blur-xl group-hover:opacity-65 transition duration-500 pointer-events-none" />
+            <div className="relative size-20 md:size-24 rounded-3xl overflow-hidden border border-white/10 shadow-2xl p-1 bg-[#08090C]/90 backdrop-blur-sm group-hover:scale-105 group-hover:border-emerald-500/50 transition-all duration-300">
+              <Image
+                src="/lidcommit-icon.png"
+                alt="LidCommit App Icon"
+                width={96}
+                height={96}
+                priority
+                className="size-full rounded-2xl object-cover"
+              />
+            </div>
+          </div>
+
           {/* Pill Badge with Pulse */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/[0.04] border border-white/10 text-zinc-300 shadow-inner hover:border-emerald-500/40 transition-colors cursor-default">
             <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -440,8 +456,14 @@ export default function Home() {
         {/* ========================================================= */}
         <ViewportReveal>
           <section className="rounded-3xl border border-emerald-500/30 bg-gradient-to-r from-emerald-500/10 via-teal-500/5 to-cyan-500/10 p-8 md:p-14 text-center space-y-6 relative overflow-hidden hover-card-glow">
-            <div className="size-16 rounded-2xl bg-emerald-500/20 border border-emerald-500/30 mx-auto flex items-center justify-center">
-              <Laptop className="size-8 text-emerald-400" />
+            <div className="relative size-20 md:size-24 rounded-3xl overflow-hidden border border-emerald-500/30 mx-auto shadow-2xl shadow-emerald-500/25 p-1 bg-[#08090C]/90 hover:scale-105 transition-all duration-300">
+              <Image
+                src="/lidcommit-icon.png"
+                alt="LidCommit Icon"
+                width={96}
+                height={96}
+                className="size-full rounded-2xl object-cover"
+              />
             </div>
             <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
               Stop worrying about manual commits before you leave.

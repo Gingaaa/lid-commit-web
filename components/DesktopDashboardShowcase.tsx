@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { 
   Sliders, 
   Copy, 
@@ -148,7 +149,15 @@ export function DesktopDashboardShowcase() {
             </div>
             <div className="h-4 w-[1px] bg-white/10 mx-1" />
             <div className="flex items-center gap-2 text-xs font-semibold text-zinc-300">
-              <span className="size-2 rounded-full bg-emerald-400" />
+              <div className="size-4 rounded overflow-hidden border border-emerald-500/30 shrink-0">
+                <Image
+                  src="/lidcommit-icon.png"
+                  alt="LidCommit Icon"
+                  width={16}
+                  height={16}
+                  className="size-full object-cover"
+                />
+              </div>
               <span>LidCommit Desktop Dashboard</span>
               <span className="text-[10px] font-mono text-zinc-500 bg-white/5 px-2 py-0.5 rounded">v0.2.0-gui</span>
             </div>
