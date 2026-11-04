@@ -251,8 +251,8 @@ export function DesktopDashboardShowcase() {
                       : "border-white/10 bg-[#0E1119]"
                   }`}
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
-                    <div className="space-y-1 min-w-0">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 min-w-0 w-full">
+                    <div className="space-y-1 min-w-0 w-full sm:flex-1">
                       <div className="flex flex-wrap items-center gap-2">
                         <div className="flex items-center gap-2">
                           <FolderGit2 className={`size-4 shrink-0 ${repo.isPaused ? "text-zinc-500" : "text-emerald-400"}`} />
@@ -275,7 +275,7 @@ export function DesktopDashboardShowcase() {
                           </span>
                         )}
                       </div>
-                      <p className="text-[11px] font-mono text-zinc-400 truncate max-w-xl">
+                      <p className="text-[11px] font-mono text-zinc-400 truncate w-full block">
                         {repo.path}
                       </p>
                     </div>
@@ -304,8 +304,8 @@ export function DesktopDashboardShowcase() {
                   </div>
 
                   {repo.lastCommit && (
-                    <div className="mt-3 pt-3 border-t border-white/5 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-zinc-400 gap-1.5">
-                      <span className="truncate pr-4 font-mono text-[11px] text-zinc-300">
+                    <div className="mt-3 pt-3 border-t border-white/5 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-zinc-400 gap-1.5 min-w-0 w-full">
+                      <span className="truncate pr-0 sm:pr-4 font-mono text-[11px] text-zinc-300 min-w-0 w-full sm:w-auto block">
                         {repo.lastCommit}
                       </span>
                       <span className="shrink-0 text-[11px] text-zinc-500 flex items-center gap-1">

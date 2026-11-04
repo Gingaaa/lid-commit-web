@@ -36,11 +36,13 @@ import { GithubIcon } from "@/components/GithubIcon";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#08090C] text-[#F3F4F6] relative overflow-x-hidden selection:bg-emerald-500/30 selection:text-emerald-300">
-      {/* Background Gradients & Glows */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[550px] bg-gradient-to-b from-emerald-500/15 via-teal-500/5 to-transparent blur-3xl pointer-events-none -z-10 animate-float" />
-      <div className="absolute top-[800px] -left-48 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute top-[1800px] -right-48 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
+    <div className="min-h-screen w-full max-w-full flex flex-col bg-[#08090C] text-[#F3F4F6] relative overflow-x-clip selection:bg-emerald-500/30 selection:text-emerald-300">
+      {/* Background Gradients & Glows inside strict overflow-hidden boundary */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[550px] bg-gradient-to-b from-emerald-500/15 via-teal-500/5 to-transparent blur-3xl animate-float" />
+        <div className="absolute top-[800px] -left-48 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl" />
+        <div className="absolute top-[1800px] -right-48 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl" />
+      </div>
 
       {/* Navigation */}
       <Navbar />
@@ -425,7 +427,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-[#0C0E14] p-4 sm:p-6 md:p-8 font-mono text-[11px] sm:text-xs text-zinc-300 overflow-x-auto hover-card-glow">
+          <div className="rounded-2xl border border-white/10 bg-[#0C0E14] p-4 sm:p-6 md:p-8 font-mono text-[11px] sm:text-xs text-zinc-300 overflow-x-auto min-w-0 w-full max-w-full hover-card-glow">
             <pre className="leading-relaxed">
 {`src/
 ├── main.rs              — Daemon entry point, event loop & manual sync handlers

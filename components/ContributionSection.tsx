@@ -123,8 +123,8 @@ export function ContributionSection() {
 
       {/* Tab 1: PR Workflow */}
       {activeTab === "workflow" && (
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start animate-in fade-in duration-300">
-          <div className="lg:col-span-7 space-y-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start min-w-0 w-full animate-in fade-in duration-300">
+          <div className="lg:col-span-7 min-w-0 w-full space-y-4">
             <h3 className="text-xl font-bold text-white flex items-center gap-2">
               <GitPullRequest className="size-5 text-emerald-400" />
               <span>Trunk-Based Git Workflow</span>
@@ -160,7 +160,7 @@ export function ContributionSection() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 rounded-2xl bg-black/70 border border-white/10 p-5 font-mono text-xs text-zinc-300 relative space-y-3">
+          <div className="lg:col-span-5 min-w-0 w-full rounded-2xl bg-black/70 border border-white/10 p-4 sm:p-5 font-mono text-[11px] sm:text-xs text-zinc-300 relative space-y-3">
             <div className="flex items-center justify-between pb-2 border-b border-white/5">
               <span className="text-[11px] text-zinc-500">Quick Contributor Commands</span>
               <button

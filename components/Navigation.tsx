@@ -95,7 +95,7 @@ export function Navbar() {
 
       {/* Mobile & Tablet Navigation Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-white/10 bg-[#08090C]/95 backdrop-blur-2xl animate-in fade-in slide-in-from-top-3 duration-200">
+        <div className="lg:hidden border-b border-white/10 bg-[#08090C]/95 backdrop-blur-2xl animate-in fade-in slide-in-from-top-3 duration-200 max-h-[calc(100dvh-4rem)] overflow-y-auto">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 space-y-2">
             {navLinks.map((link) => {
               const Icon = link.icon;

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -14,6 +14,13 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#08090C",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://lid-commit-web.netlify.app"),
@@ -59,9 +66,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full w-full overflow-x-hidden dark antialiased selection:bg-emerald-500/30 selection:text-emerald-300", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
+      className={cn("h-full w-full max-w-full overflow-x-clip dark antialiased selection:bg-emerald-500/30 selection:text-emerald-300", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
     >
-      <body className="min-h-full w-full overflow-x-hidden flex flex-col bg-[#08090C] text-[#F3F4F6]">{children}</body>
+      <body className="min-h-full w-full max-w-full overflow-x-clip flex flex-col bg-[#08090C] text-[#F3F4F6]">{children}</body>
     </html>
   );
 }

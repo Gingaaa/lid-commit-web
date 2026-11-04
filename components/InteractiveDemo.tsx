@@ -130,9 +130,9 @@ export function InteractiveDemo() {
       </div>
 
       {/* Grid: Left is Diff, Right is Commit Result */}
-      <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+      <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch min-w-0 w-full">
         {/* Left: Input Diff */}
-        <div className="lg:col-span-7 flex flex-col rounded-xl border border-white/5 bg-[#090A0F] overflow-hidden">
+        <div className="lg:col-span-7 min-w-0 w-full flex flex-col rounded-xl border border-white/5 bg-[#090A0F] overflow-hidden">
           <div className="flex flex-wrap items-center justify-between px-3.5 sm:px-4 py-2.5 sm:py-3 bg-white/[0.02] border-b border-white/5 text-xs text-zinc-400 gap-2">
             <div className="flex items-center gap-2 min-w-0">
               <GitBranch className="size-3.5 text-emerald-400 shrink-0" />
@@ -171,7 +171,7 @@ export function InteractiveDemo() {
         </div>
 
         {/* Right: Automated Output & Toast */}
-        <div className="lg:col-span-5 flex flex-col justify-between gap-4">
+        <div className="lg:col-span-5 min-w-0 w-full flex flex-col justify-between gap-4">
           <div className="rounded-xl border border-emerald-500/20 bg-gradient-to-b from-emerald-500/[0.07] to-transparent p-5 flex flex-col justify-between h-full">
             <div>
               <div className="flex items-center justify-between text-xs mb-3">

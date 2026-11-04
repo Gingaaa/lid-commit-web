@@ -17,6 +17,20 @@ export function ViewportReveal({ children, id, className = "", delayMs = 0 }: Vi
     const element = ref.current;
     if (!element) return;
 
+    // Immediately show if already within or near viewport on mount
+    if (typeof window !== "undefined") {
+      const rect = element.getBoundingClientRect();
+      if (rect.top <= (window.innerHeight || document.documentElement.clientHeight) + 150) {
+        setIsVisible(true);
+        return;
+      }
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -25,8 +39,8 @@ export function ViewportReveal({ children, id, className = "", delayMs = 0 }: Vi
         }
       },
       {
-        threshold: 0.12,
-        rootMargin: "0px 0px -40px 0px",
+        threshold: 0.01,
+        rootMargin: "100px 0px 50px 0px",
       }
     );
 
@@ -47,7 +61,7 @@ export function ViewportReveal({ children, id, className = "", delayMs = 0 }: Vi
       className={`transition-all duration-700 ease-out transform ${
         isVisible
           ? "opacity-100 translate-y-0 scale-100 filter-none"
-          : "opacity-0 translate-y-8 scale-[0.98] blur-[2px] pointer-events-none"
+          : "opacity-0 translate-y-4 scale-[0.99] pointer-events-none"
       } ${className}`}
     >
       {children}

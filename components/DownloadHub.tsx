@@ -95,9 +95,9 @@ export function DownloadHub() {
       <div className="mt-6 sm:mt-8 transition-all duration-300">
         {/* WINDOWS TAB */}
         {os === "windows" && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center animate-in fade-in duration-300">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center min-w-0 w-full animate-in fade-in duration-300">
             {/* Download Card */}
-            <div className="lg:col-span-7 space-y-5 sm:space-y-6">
+            <div className="lg:col-span-7 min-w-0 w-full space-y-5 sm:space-y-6">
               <div className="p-4 sm:p-6 md:p-8 rounded-2xl bg-gradient-to-br from-emerald-500/[0.08] via-emerald-500/[0.02] to-transparent border border-emerald-500/30 space-y-4 sm:space-y-5">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
@@ -168,7 +168,7 @@ export function DownloadHub() {
             </div>
 
             {/* Inno Setup Visual Graphic Mock */}
-            <div className="lg:col-span-5 rounded-2xl border border-white/10 bg-[#07090E] p-6 shadow-2xl relative">
+            <div className="lg:col-span-5 min-w-0 w-full rounded-2xl border border-white/10 bg-[#07090E] p-4 sm:p-6 shadow-2xl relative">
               <div className="flex items-center justify-between pb-4 border-b border-white/5 text-xs">
                 <span className="font-mono text-zinc-400 flex items-center gap-1.5">
                   <Monitor className="size-3.5 text-emerald-400" />
