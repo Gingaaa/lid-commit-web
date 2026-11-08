@@ -32,7 +32,7 @@ export function DownloadHub() {
         <div className="space-y-2.5 sm:space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
             <Package className="size-3.5" />
-            <span>Zero-Compiling Required &bull; v0.2.0 Released</span>
+            <span>Zero-Compiling Required &bull; New version has launched</span>
           </div>
           <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white">
             Download LidCommit
@@ -188,7 +188,7 @@ export function DownloadHub() {
                   />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-white">Installing LidCommit v0.2.0</h4>
+                  <h4 className="text-sm font-semibold text-white">Installing LidCommit Desktop</h4>
                   <p className="text-[11px] text-zinc-400 mt-0.5">Ready to configure auto-commit &amp; desktop tray.</p>
                 </div>
 
@@ -309,7 +309,7 @@ sudo mv lid-commit /usr/local/bin/
                   Build from Source (Developers &amp; Contributors)
                 </h3>
                 <p className="text-xs text-zinc-400 mt-1">
-                  Requires Rust toolchain (v1.75+). Open source and contributions welcome!
+                  Requires standard Rust toolchain. Open source and contributions welcome!
                 </p>
               </div>
 

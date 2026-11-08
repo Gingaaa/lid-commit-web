@@ -159,8 +159,8 @@ export function DesktopDashboardShowcase() {
                 />
               </div>
               <span className="truncate text-[11px] sm:text-xs">LidCommit Desktop Dashboard</span>
-              <span className="text-[9px] sm:text-[10px] font-mono text-zinc-500 bg-white/5 px-1.5 py-0.5 rounded shrink-0 hidden sm:inline">
-                v0.2.0-gui
+              <span className="text-[9px] sm:text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-1.5 py-0.5 rounded shrink-0 hidden sm:inline font-semibold">
+                New Version
               </span>
             </div>
           </div>

@@ -37,8 +37,8 @@ export function Navbar() {
             <span className="font-bold text-base tracking-tight text-white group-hover:text-emerald-300 transition-colors">
               LidCommit
             </span>
-            <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">
-              v0.2.0
+            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">
+              New Version Launched
             </span>
           </div>
         </Link>
@@ -160,7 +160,7 @@ export function Footer() {
                 className="size-full object-cover"
               />
             </div>
-            <span className="font-semibold text-white">LidCommit v0.2.0</span>
+            <span className="font-semibold text-white">LidCommit</span>
           </div>
           <span className="text-zinc-500 hidden sm:inline">&bull;</span>
           <span>Open Source under MIT License © Anshu Kumar</span>

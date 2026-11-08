@@ -70,7 +70,7 @@ export default function Home() {
           {/* Pill Badge with Pulse */}
           <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold bg-white/[0.04] border border-white/10 text-zinc-300 shadow-inner hover:border-emerald-500/40 transition-colors cursor-default max-w-full text-center leading-snug">
             <span className="size-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-            <span>v0.2.0 Released &bull; 1-Click Windows Setup &bull; Native Desktop GUI</span>
+            <span>New version has launched &bull; 1-Click Windows Setup &bull; Native Desktop GUI</span>
           </div>
 
           {/* Main Headline */}
