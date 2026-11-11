@@ -1,18 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { 
-  Sparkles, 
-  Cpu, 
-  Key, 
-  Globe, 
-  Clock, 
-  Check, 
-  ShieldCheck, 
-  Sliders, 
-  Save, 
-  CheckCircle2, 
-  Terminal 
+import {
+  Sparkles,
+  Cpu,
+  Key,
+  Globe,
+  Clock,
+  Check,
+  Sliders,
+  Save,
 } from "lucide-react";
 
 type ProviderType = "gemini" | "ollama" | "openai" | "fallback";
@@ -53,11 +50,10 @@ export function AIProviderSelector() {
         {/* Gemini */}
         <button
           onClick={() => setProvider("gemini")}
-          className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl border text-left flex flex-col justify-between transition-all duration-200 group relative ${
-            provider === "gemini"
+          className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl border text-left flex flex-col justify-between transition-all duration-200 group relative ${provider === "gemini"
               ? "border-emerald-400/80 bg-emerald-500/[0.08] shadow-lg shadow-emerald-500/15 scale-[1.01]"
               : "border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]"
-          }`}
+            }`}
         >
           {provider === "gemini" && (
             <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 size-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -80,11 +76,10 @@ export function AIProviderSelector() {
         {/* Ollama */}
         <button
           onClick={() => setProvider("ollama")}
-          className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl border text-left flex flex-col justify-between transition-all duration-200 group relative ${
-            provider === "ollama"
+          className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl border text-left flex flex-col justify-between transition-all duration-200 group relative ${provider === "ollama"
               ? "border-purple-400/80 bg-purple-500/[0.08] shadow-lg shadow-purple-500/15 scale-[1.01]"
               : "border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]"
-          }`}
+            }`}
         >
           {provider === "ollama" && (
             <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 size-2 rounded-full bg-purple-400 animate-pulse" />
@@ -107,11 +102,10 @@ export function AIProviderSelector() {
         {/* OpenAI */}
         <button
           onClick={() => setProvider("openai")}
-          className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl border text-left flex flex-col justify-between transition-all duration-200 group relative ${
-            provider === "openai"
+          className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl border text-left flex flex-col justify-between transition-all duration-200 group relative ${provider === "openai"
               ? "border-cyan-400/80 bg-cyan-500/[0.08] shadow-lg shadow-cyan-500/15 scale-[1.01]"
               : "border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]"
-          }`}
+            }`}
         >
           {provider === "openai" && (
             <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 size-2 rounded-full bg-cyan-400 animate-pulse" />
@@ -134,11 +128,10 @@ export function AIProviderSelector() {
         {/* Clean Fallback */}
         <button
           onClick={() => setProvider("fallback")}
-          className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl border text-left flex flex-col justify-between transition-all duration-200 group relative ${
-            provider === "fallback"
+          className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl border text-left flex flex-col justify-between transition-all duration-200 group relative ${provider === "fallback"
               ? "border-amber-400/80 bg-amber-500/[0.08] shadow-lg shadow-amber-500/15 scale-[1.01]"
               : "border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]"
-          }`}
+            }`}
         >
           {provider === "fallback" && (
             <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 size-2 rounded-full bg-amber-400 animate-pulse" />

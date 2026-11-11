@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { Navbar, Footer } from "@/components/Navigation";
 import { InteractiveDemo } from "@/components/InteractiveDemo";
@@ -10,27 +9,20 @@ import { ContributionSection } from "@/components/ContributionSection";
 import { ViewportReveal } from "@/components/ViewportReveal";
 import {
   Laptop,
-  GitCommit,
   GitPullRequest,
   ShieldAlert,
-  Terminal,
   Zap,
   Sparkles,
-  ArrowRight,
   CheckCircle2,
   Lock,
   Layers,
   BellRing,
-  Cpu,
   Monitor,
   FolderGit2,
-  Play,
   Pause,
   AlertTriangle,
   Clock,
   Download,
-  Package,
-  Heart
 } from "lucide-react";
 import { GithubIcon } from "@/components/GithubIcon";
 
@@ -452,7 +444,7 @@ export default function Home() {
 
           <div className="rounded-2xl border border-white/10 bg-[#0C0E14] p-4 sm:p-6 md:p-8 font-mono text-[11px] sm:text-xs text-zinc-300 overflow-x-auto min-w-0 w-full max-w-full hover-card-glow">
             <pre className="leading-relaxed">
-{`src/
+              {`src/
 ├── main.rs              — Daemon entry point, event loop & manual sync handlers
 ├── gui.rs               — Native desktop window, system tray, and IPC controller
 ├── dashboard.html       — Modern dark-mode dashboard UI & frontend logic

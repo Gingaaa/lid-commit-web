@@ -1,21 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { 
-  GitPullRequest, 
-  Heart, 
-  Sparkles, 
-  Terminal, 
-  Code2, 
-  Star, 
-  ArrowUpRight, 
-  ShieldCheck, 
-  FileText, 
-  Bug, 
-  Lightbulb, 
-  Check, 
+import {
+  GitPullRequest,
+  Heart,
+  Terminal,
+  ArrowUpRight,
+  ShieldCheck,
+  FileText,
+  Bug,
+  Lightbulb,
+  Check,
   Copy,
-  BookOpen,
   GitBranch,
   Scale
 } from "lucide-react";
@@ -74,11 +70,10 @@ export function ContributionSection() {
       <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-1.5 p-1 sm:p-1.5 bg-black/50 rounded-xl sm:rounded-2xl border border-white/10 w-full sm:w-fit">
         <button
           onClick={() => setActiveTab("workflow")}
-          className={`justify-center flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-2 text-xs font-bold rounded-lg sm:rounded-xl transition-all duration-200 text-center ${
-            activeTab === "workflow"
+          className={`justify-center flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-2 text-xs font-bold rounded-lg sm:rounded-xl transition-all duration-200 text-center ${activeTab === "workflow"
               ? "bg-emerald-500 text-black shadow-md font-extrabold"
               : "text-zinc-400 hover:text-white hover:bg-white/5"
-          }`}
+            }`}
         >
           <GitBranch className="size-3.5 shrink-0" />
           <span className="truncate">PR Workflow</span>
@@ -86,11 +81,10 @@ export function ContributionSection() {
 
         <button
           onClick={() => setActiveTab("commits")}
-          className={`justify-center flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-2 text-xs font-bold rounded-lg sm:rounded-xl transition-all duration-200 text-center ${
-            activeTab === "commits"
+          className={`justify-center flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-2 text-xs font-bold rounded-lg sm:rounded-xl transition-all duration-200 text-center ${activeTab === "commits"
               ? "bg-emerald-500 text-black shadow-md font-extrabold"
               : "text-zinc-400 hover:text-white hover:bg-white/5"
-          }`}
+            }`}
         >
           <Terminal className="size-3.5 shrink-0" />
           <span className="truncate">Commits</span>
@@ -98,11 +92,10 @@ export function ContributionSection() {
 
         <button
           onClick={() => setActiveTab("templates")}
-          className={`justify-center flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-2 text-xs font-bold rounded-lg sm:rounded-xl transition-all duration-200 text-center ${
-            activeTab === "templates"
+          className={`justify-center flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-2 text-xs font-bold rounded-lg sm:rounded-xl transition-all duration-200 text-center ${activeTab === "templates"
               ? "bg-emerald-500 text-black shadow-md font-extrabold"
               : "text-zinc-400 hover:text-white hover:bg-white/5"
-          }`}
+            }`}
         >
           <FileText className="size-3.5 shrink-0" />
           <span className="truncate">Templates</span>
@@ -110,11 +103,10 @@ export function ContributionSection() {
 
         <button
           onClick={() => setActiveTab("governance")}
-          className={`justify-center flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-2 text-xs font-bold rounded-lg sm:rounded-xl transition-all duration-200 text-center ${
-            activeTab === "governance"
+          className={`justify-center flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-2 text-xs font-bold rounded-lg sm:rounded-xl transition-all duration-200 text-center ${activeTab === "governance"
               ? "bg-emerald-500 text-black shadow-md font-extrabold"
               : "text-zinc-400 hover:text-white hover:bg-white/5"
-          }`}
+            }`}
         >
           <Scale className="size-3.5 shrink-0" />
           <span className="truncate">License</span>
@@ -172,7 +164,7 @@ export function ContributionSection() {
               </button>
             </div>
             <pre className="overflow-x-auto text-emerald-300 leading-relaxed">
-{`# 1. Clone your fork:
+              {`# 1. Clone your fork:
 git clone https://github.com/<your-user>/lid-commit.git
 cd lid-commit
 
