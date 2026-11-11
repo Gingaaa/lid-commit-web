@@ -51,10 +51,10 @@ export default function Home() {
         {/* ========================================================= */}
         {/* 1. HERO SECTION */}
         {/* ========================================================= */}
-        <section className="flex flex-col items-center text-center space-y-6 sm:space-y-8 pt-2 sm:pt-4 md:pt-8">
+        <section className="flex flex-col items-center text-center space-y-6 sm:space-y-8 pt-4 sm:pt-6 md:pt-10">
           {/* Main App Icon with Ambient Glow */}
           <div className="relative group">
-            <div className="absolute -inset-2 rounded-3xl bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-500 opacity-35 blur-xl group-hover:opacity-65 transition duration-500 pointer-events-none" />
+            <div className="absolute -inset-2 rounded-3xl bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-500 opacity-25 blur-xl group-hover:opacity-50 transition duration-500 pointer-events-none" />
             <div className="relative size-16 sm:size-20 md:size-24 rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 shadow-2xl p-1 bg-[#08090C]/90 backdrop-blur-sm group-hover:scale-105 group-hover:border-emerald-500/50 transition-all duration-300">
               <Image
                 src="/lidcommit-icon.png"
@@ -67,14 +67,14 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Pill Badge with Pulse */}
-          <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold bg-white/[0.04] border border-white/10 text-zinc-300 shadow-inner hover:border-emerald-500/40 transition-colors cursor-default max-w-full text-center leading-snug">
+          {/* Pill Badge */}
+          <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-medium bg-white/[0.03] border border-white/10 text-zinc-300 shadow-sm hover:border-emerald-500/40 transition-colors cursor-default max-w-full text-center leading-snug">
             <span className="size-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-            <span>New version has launched &bull; 1-Click Windows Setup &bull; Native Desktop GUI</span>
+            <span>New version has launched &bull; Native Desktop GUI &bull; 1-Click Windows Setup</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-4xl leading-[1.15] sm:leading-[1.12]">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-4xl leading-[1.12]">
             Close your laptop lid. <br />
             <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
               Your code is already committed.
@@ -83,14 +83,14 @@ export default function Home() {
 
           {/* Subtitle */}
           <p className="max-w-2xl text-sm sm:text-base md:text-lg text-zinc-400 leading-relaxed px-1 sm:px-0">
-            Never lose progress again. <strong className="text-zinc-200">LidCommit</strong> sits in your system tray and monitors active IDE workspaces. When you close your laptop, it synthesizes AI commit messages, commits your diff, and pushes directly to GitHub.
+            Never lose unsaved progress again. <strong className="text-zinc-200">LidCommit</strong> is a native background daemon with a modern system tray GUI. It inspects active IDE workspaces, generates semantic commit messages from git diffs using Gemini or Ollama, and safely pushes to your remote.
           </p>
 
-          {/* CTA Buttons with Hover Micro-Animations */}
+          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 w-full sm:w-auto">
             <a
               href="#download-hub"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-sm transition-all duration-200 shadow-xl shadow-emerald-500/25 hover:scale-[1.03] active:scale-[0.98] text-center"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-sm transition-all duration-200 shadow-xl shadow-emerald-500/25 hover:scale-[1.02] active:scale-[0.98] text-center"
             >
               <Download className="size-4 shrink-0" />
               <span>Download for Windows (Setup .exe)</span>
@@ -115,35 +115,58 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Hero Feature Highlights with Interactive Hover Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 w-full max-w-4xl pt-4 text-left">
-            <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.02] hover-card-glow cursor-default">
-              <div className="text-xs font-semibold text-white flex items-center gap-2 mb-1">
-                <Monitor className="size-3.5 text-emerald-400" />
-                <span>Desktop GUI</span>
-              </div>
-              <p className="text-[11px] text-zinc-400">Tray app with pause toggles &amp; activity history.</p>
+          {/* Product Badges Strip (GitHub style) */}
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-zinc-400 pt-2">
+            <div className="flex items-center gap-1.5">
+              <CheckCircle2 className="size-4 text-emerald-400" />
+              <span>Inno Setup 1-Click Installer</span>
             </div>
-            <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.02] hover-card-glow cursor-default">
-              <div className="text-xs font-semibold text-white flex items-center gap-2 mb-1">
+            <span className="text-zinc-600 hidden sm:inline">&bull;</span>
+            <div className="flex items-center gap-1.5">
+              <CheckCircle2 className="size-4 text-emerald-400" />
+              <span>Per-Project Pause Controls</span>
+            </div>
+            <span className="text-zinc-600 hidden sm:inline">&bull;</span>
+            <div className="flex items-center gap-1.5">
+              <CheckCircle2 className="size-4 text-emerald-400" />
+              <span>Closed Workspace Pruning</span>
+            </div>
+            <span className="text-zinc-600 hidden sm:inline">&bull;</span>
+            <div className="flex items-center gap-1.5">
+              <CheckCircle2 className="size-4 text-emerald-400" />
+              <span>Offline Fallback Guaranteed</span>
+            </div>
+          </div>
+
+          {/* Hero Feature Highlights */}
+          <div id="features" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 w-full max-w-5xl pt-6 text-left scroll-mt-24">
+            <div className="p-4 rounded-xl border border-white/10 bg-[#0D1117] hover-card-glow cursor-default">
+              <div className="text-xs font-semibold text-white flex items-center gap-2 mb-1.5">
+                <Monitor className="size-3.5 text-emerald-400" />
+                <span>Desktop GUI &amp; Tray</span>
+              </div>
+              <p className="text-xs text-zinc-400 leading-relaxed">Native Webview2 dashboard with live repository statuses and system tray controls.</p>
+            </div>
+            <div className="p-4 rounded-xl border border-white/10 bg-[#0D1117] hover-card-glow cursor-default">
+              <div className="text-xs font-semibold text-white flex items-center gap-2 mb-1.5">
                 <Pause className="size-3.5 text-amber-400" />
                 <span>Per-Project Pause</span>
               </div>
-              <p className="text-[11px] text-zinc-400">Selectively skip repos from auto-committing.</p>
+              <p className="text-xs text-zinc-400 leading-relaxed">Selectively exempt sensitive projects from lid-close commits with 1-click persistent toggles.</p>
             </div>
-            <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.02] hover-card-glow cursor-default">
-              <div className="text-xs font-semibold text-white flex items-center gap-2 mb-1">
+            <div className="p-4 rounded-xl border border-white/10 bg-[#0D1117] hover-card-glow cursor-default">
+              <div className="text-xs font-semibold text-white flex items-center gap-2 mb-1.5">
                 <Zap className="size-3.5 text-cyan-400" />
-                <span>Instant Sync Now</span>
+                <span>Instant &quot;Sync Now&quot;</span>
               </div>
-              <p className="text-[11px] text-zinc-400">Commit and push on-demand without closing lid.</p>
+              <p className="text-xs text-zinc-400 leading-relaxed">Trigger on-demand commits across all or individual repositories without waiting for lid close.</p>
             </div>
-            <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.02] hover-card-glow cursor-default">
-              <div className="text-xs font-semibold text-white flex items-center gap-2 mb-1">
+            <div className="p-4 rounded-xl border border-white/10 bg-[#0D1117] hover-card-glow cursor-default">
+              <div className="text-xs font-semibold text-white flex items-center gap-2 mb-1.5">
                 <Clock className="size-3.5 text-purple-400" />
                 <span>Zero-Config Fallback</span>
               </div>
-              <p className="text-[11px] text-zinc-400">Clean auto-save timestamps if offline or no key.</p>
+              <p className="text-xs text-zinc-400 leading-relaxed">Timestamped auto-save commits work seamlessly offline without requiring any AI API key.</p>
             </div>
           </div>
         </section>
@@ -332,12 +355,24 @@ export default function Home() {
             <div className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
               <div className="flex items-center gap-3">
                 <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-emerald-400 shrink-0">
-                  <CheckCircle2 className="size-4" />
+                  <Pause className="size-4" />
                 </div>
-                <h4 className="text-sm font-semibold text-white">Clean Working Tree Check</h4>
+                <h4 className="text-sm font-semibold text-white">Global &amp; Per-Project Pause</h4>
               </div>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                If no files are modified, deleted, or staged, LidCommit silently skips the repo. Zero empty commits created.
+                Pause the daemon globally or selectively toggle auto-commit on specific repositories with one click in the GUI. Pause states persist across reboots.
+              </p>
+            </div>
+
+            <div className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
+              <div className="flex items-center gap-3">
+                <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 shrink-0">
+                  <FolderGit2 className="size-4" />
+                </div>
+                <h4 className="text-sm font-semibold text-white">Active IDE Workspace Filter</h4>
+              </div>
+              <p className="text-xs text-zinc-400 leading-relaxed">
+                Verifies IDE session backup paths on disk. Folders closed in VS Code, Cursor, Windsurf, or JetBrains are automatically pruned from detection.
               </p>
             </div>
 
@@ -349,7 +384,7 @@ export default function Home() {
                 <h4 className="text-sm font-semibold text-white">50+ Files Guard</h4>
               </div>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                Forgot to add <code className="text-zinc-200">node_modules</code> or <code className="text-zinc-200">target/</code> to <code className="text-zinc-200">.gitignore</code>? Any diff above 50 files is automatically skipped to prevent accidental bloat.
+                Forgot to add <code className="text-zinc-200">node_modules</code> or build artifacts to <code className="text-zinc-200">.gitignore</code>? Any diff above 50 files is automatically skipped.
               </p>
             </div>
 
@@ -367,37 +402,25 @@ export default function Home() {
 
             <div className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
               <div className="flex items-center gap-3">
-                <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 shrink-0">
-                  <GitPullRequest className="size-4" />
+                <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-emerald-400 shrink-0">
+                  <CheckCircle2 className="size-4" />
                 </div>
-                <h4 className="text-sm font-semibold text-white">Remote Verification</h4>
+                <h4 className="text-sm font-semibold text-white">Clean Tree &amp; Remote Check</h4>
               </div>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                Only pushes if a valid git remote URL is configured upstream. If you are working on a pure local sandbox, it protects your setup.
+                If no files have uncommitted changes, LidCommit silently skips the repo (zero empty commits). Remote push only triggers if an upstream URL is configured.
               </p>
             </div>
 
             <div className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
               <div className="flex items-center gap-3">
                 <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-purple-400 shrink-0">
-                  <Layers className="size-4" />
-                </div>
-                <h4 className="text-sm font-semibold text-white">Custom Excluded Paths</h4>
-              </div>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                Add sensitive repositories, secret vaults, or experimental directories to your <code className="text-zinc-200">config.toml</code> to permanently blacklist them.
-              </p>
-            </div>
-
-            <div className="p-5 sm:p-6 rounded-2xl border border-white/10 bg-[#0E1017] space-y-3 hover-card-glow">
-              <div className="flex items-center gap-3">
-                <div className="size-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-teal-400 shrink-0">
                   <BellRing className="size-4" />
                 </div>
-                <h4 className="text-sm font-semibold text-white">Loop Prevention &amp; Alerts</h4>
+                <h4 className="text-sm font-semibold text-white">Debounced Power Events</h4>
               </div>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                Integrated debounce monitors prevent duplicate runs and verify that notifications fire accurately once per lid cycle.
+                Integrated debounce monitors prevent duplicate runs during rapid sleep-wake cycles and ensure notifications only fire once per session.
               </p>
             </div>
           </div>

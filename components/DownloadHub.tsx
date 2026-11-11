@@ -38,7 +38,7 @@ export function DownloadHub() {
             Download LidCommit
           </h2>
           <p className="text-xs sm:text-sm text-zinc-400 max-w-xl">
-            Installs just like any standard modern desktop app. No Rust toolchain, terminal commands, or manual compiling needed for end users.
+            Clean 1-click Windows installer with welcome wizard, Start menu integration, background daemon, and standard Windows uninstaller.
           </p>
         </div>
 
@@ -146,15 +146,15 @@ export function DownloadHub() {
                     <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0" />
                     <span>Start Menu &amp; Tray</span>
                   </div>
-                  <p className="text-zinc-400 text-[11px]">Docks straight into your system tray on launch.</p>
+                  <p className="text-zinc-400 text-[11px]">Docks straight into your system tray on launch with clean shortcuts.</p>
                 </div>
 
                 <div className="p-3 sm:p-4 rounded-xl bg-black/40 border border-white/5 text-xs space-y-1">
                   <div className="font-semibold text-white flex items-center gap-1.5">
                     <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0" />
-                    <span>Auto-Launch Option</span>
+                    <span>In-Place Upgrades</span>
                   </div>
-                  <p className="text-zinc-400 text-[11px]">Optional startup protection in 1 checkbox.</p>
+                  <p className="text-zinc-400 text-[11px]">Terminates running instances safely and preserves user configs.</p>
                 </div>
 
                 <div className="p-3 sm:p-4 rounded-xl bg-black/40 border border-white/5 text-xs space-y-1">
@@ -162,7 +162,7 @@ export function DownloadHub() {
                     <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0" />
                     <span>Clean Uninstaller</span>
                   </div>
-                  <p className="text-zinc-400 text-[11px]">Standard removal via Windows Settings.</p>
+                  <p className="text-zinc-400 text-[11px]">Standard removal via Windows Settings with data cleanup prompt.</p>
                 </div>
               </div>
             </div>

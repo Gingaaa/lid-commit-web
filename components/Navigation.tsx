@@ -12,11 +12,12 @@ export function Navbar() {
   const navLinks = [
     { href: "#download-hub", label: "Downloads", highlight: "emerald", icon: Download },
     { href: "#desktop-dashboard", label: "Desktop App", highlight: "default", icon: Monitor },
-    { href: "#how-it-works", label: "How It Works", highlight: "default", icon: Zap },
+    { href: "#features", label: "Features", highlight: "default", icon: Zap },
+    { href: "#desktop-dashboard", label: "Dashboard", highlight: "default", icon: Monitor },
     { href: "#providers", label: "AI Models", highlight: "default", icon: Sparkles },
-    { href: "#windows-power", label: "Windows Setup", highlight: "amber", icon: AlertTriangle },
-    { href: "#safety", label: "Safety", highlight: "default", icon: ShieldAlert },
-    { href: "#contribute", label: "Contribute", highlight: "rose", icon: Heart },
+    { href: "#windows-power", label: "Setup", highlight: "amber", icon: AlertTriangle },
+    { href: "#safety", label: "Safeguards", highlight: "default", icon: ShieldAlert },
+    { href: "#contribute", label: "Community", highlight: "rose", icon: Heart },
   ];
 
   return (
@@ -37,7 +38,8 @@ export function Navbar() {
             <span className="font-bold text-base tracking-tight text-white group-hover:text-emerald-300 transition-colors">
               LidCommit
             </span>
-            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">
+            <span className="inline-flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-medium">
+              <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
               New Version Launched
             </span>
           </div>
@@ -75,11 +77,12 @@ export function Navbar() {
             href="https://github.com/Gingaaa/lid-commit"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-xs font-semibold text-white transition-all shadow-sm"
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-lg border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] hover:border-white/20 text-xs font-semibold text-white transition-all shadow-sm"
           >
             <GithubIcon className="size-3.5" />
-            <span className="hidden sm:inline">GitHub</span>
-            <ArrowUpRight className="size-3 text-zinc-400" />
+            <span className="hidden sm:inline">Star on GitHub</span>
+            <span className="hidden md:inline-block text-[10px] px-1.5 py-0.5 rounded bg-white/10 text-zinc-300 font-mono">Open Source</span>
+            <ArrowUpRight className="size-3 text-zinc-500" />
           </a>
 
           {/* Mobile & Tablet Hamburger Toggle */}
@@ -162,8 +165,10 @@ export function Footer() {
             </div>
             <span className="font-semibold text-white">LidCommit</span>
           </div>
-          <span className="text-zinc-500 hidden sm:inline">&bull;</span>
-          <span>Open Source under MIT License © Anshu Kumar</span>
+          <span className="text-zinc-600 hidden sm:inline">&bull;</span>
+          <span className="text-zinc-400">Autonomous Git daemon with native GUI and AI commit synthesis</span>
+          <span className="text-zinc-600 hidden sm:inline">&bull;</span>
+          <span>MIT License © Anshu Kumar</span>
         </div>
         <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-2">
           <a

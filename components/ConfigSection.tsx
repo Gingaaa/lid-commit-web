@@ -9,6 +9,13 @@ export function ConfigSection() {
   const sampleConfig = `# ~/.config/lid-commit/config.toml
 # Or %APPDATA%\\lid-commit\\config.toml on Windows
 
+[general]
+# Whether background monitoring is paused globally
+paused = false
+
+# Automatically push to remote branch after commit
+push_after_commit = true
+
 [ai]
 # Options: "gemini" | "openai" | "ollama"
 provider = "gemini"
@@ -29,11 +36,14 @@ require_remote = true
 abort_on_merge_conflict = true
 
 [filters]
-# Directories to completely ignore from auto-commits
+# Directories to permanently ignore from auto-commits
 excluded_paths = [
-    "C:\\\\Users\\\\anshu\\\\work\\\\secret-vault",
+    "C:\\\\Users\\\\dev\\\\work\\\\secret-vault",
     "~/experiments/throwaway-test"
 ]
+
+# Projects paused dynamically via UI toggle
+paused_paths = []
 
 [notifications]
 # Send native desktop toast notifications on completion

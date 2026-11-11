@@ -83,6 +83,10 @@ export function DesktopDashboardShowcase() {
   };
 
   const handleSyncSingle = (id: string) => {
+    if (daemonPaused) return;
+    const target = repos.find((r) => r.id === id);
+    if (target?.isPaused) return;
+
     setSyncingId(id);
     setTimeout(() => {
       setRepos((prev) =>
@@ -92,7 +96,7 @@ export function DesktopDashboardShowcase() {
                 ...r,
                 status: "clean",
                 filesChanged: 0,
-                lastCommit: `🔒 [Manual Sync] auto-commit at ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`,
+                lastCommit: `🔒 [Commit This] updated ${r.branch}`,
                 lastCommitTime: "Just now",
               }
             : r
@@ -103,6 +107,7 @@ export function DesktopDashboardShowcase() {
   };
 
   const handleSyncAll = () => {
+    if (daemonPaused) return;
     setSyncingAll(true);
     setTimeout(() => {
       setRepos((prev) =>
@@ -123,17 +128,17 @@ export function DesktopDashboardShowcase() {
   };
 
   return (
-    <div id="desktop-dashboard" className="space-y-4 sm:space-y-6">
+    <div id="desktop-dashboard" className="space-y-4 sm:space-y-6 scroll-mt-24">
       <div className="text-center max-w-3xl mx-auto space-y-2 sm:space-y-3">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
           <Monitor className="size-3.5" />
-          <span>New in Latest Release: Native Desktop App</span>
+          <span>Interactive Desktop GUI &amp; System Tray</span>
         </div>
         <h2 className="text-xl sm:text-3xl md:text-5xl font-extrabold tracking-tight text-white">
-          Visual Control. Zero Friction.
+          Visual Control. Granular Defense.
         </h2>
         <p className="text-xs sm:text-sm md:text-base text-zinc-400 leading-relaxed">
-          LidCommit now launches with a sleek native dark-mode GUI &amp; System Tray application. Inspect open IDE workspaces, selectively pause auto-commits per repository, trigger on-demand syncs, and review live activity logs.
+          LidCommit includes a native dark-mode GUI &amp; system tray client. Inspect open IDE workspaces in real time, toggle per-repository pause overrides, trigger instant synchronization, and review live audit history.
         </p>
       </div>
 
@@ -379,7 +384,7 @@ export function DesktopDashboardShowcase() {
                   <span>AI Commit Synthesis</span>
                 </div>
                 <p className="text-xs text-zinc-400 leading-relaxed">
-                  Configured provider: <strong className="text-zinc-200">Google Gemini (gemini-2.0-flash)</strong>. Also supports OpenAI (<code className="text-zinc-300">gpt-4o-mini</code>) and local offline Ollama (<code className="text-zinc-300">llama3.2</code>).
+                  Configured provider: <strong className="text-zinc-200">Google Gemini (gemini-2.0-flash)</strong>. Also natively supports OpenAI (<code className="text-zinc-300">gpt-4o-mini</code>) and local offline Ollama (<code className="text-zinc-300">llama3.2</code>, <code className="text-zinc-300">codellama</code>).
                 </p>
               </div>
 
@@ -393,6 +398,28 @@ export function DesktopDashboardShowcase() {
                   <code className="text-emerald-300 bg-white/5 px-2 py-0.5 rounded mt-1 inline-block">
                     [LidCommit] auto-save at YYYY-MM-DD HH:MM
                   </code>
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-2">
+                <div className="flex items-center gap-2 text-sm font-semibold text-white">
+                  <CheckCircle2 className="size-4 text-emerald-400" />
+                  <span>Active Workspace Only Filter</span>
+                </div>
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  Automatically verifies that IDE project session folders exist on disk. Closed windows are pruned so background projects don&apos;t get touched.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-black/40 border border-white/5 space-y-2">
+                <div className="flex items-center gap-2 text-sm font-semibold text-white">
+                  <ShieldCheck className="size-4 text-purple-400" />
+                  <span>Persistent Pause States</span>
+                </div>
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  Per-project pause states and global pause are written directly to <code className="text-zinc-300">config.toml</code> and persist across reboots.
                 </p>
               </div>
             </div>
